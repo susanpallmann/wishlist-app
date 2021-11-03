@@ -17,13 +17,11 @@ I don't really plan to launch this at this point; the real point of this project
   * [2.0 - Nice to Haves](#20---nice-to-haves)
   * [3.0 - True Web App](#30---true-web-app)
 
-## Sprint
-**Sprint 1**
-
+## Current Sprint
 *10/31 - 11/06*
 
-Features Planned:
-* 0.1
+Features:
+* 0.1 - *Not Started*
 * 0.2
 * 0.3
 * 0.4
