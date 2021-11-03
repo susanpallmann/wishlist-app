@@ -21,16 +21,17 @@ I don't really plan to launch this at this point; the real point of this project
 *10/31 - 11/06*
 
 Features:
-* 0.1 - *Complete*
-* 0.2 - *Complete*
-* 0.3 - *Complete*
-* 0.4 - *Complete*
-* 1.1 - *Started*
+- [X] 0.1 - *Complete*
+- [X] 0.2 - *Complete*
+- [X] 0.3 - *Complete*
+- [X] 0.4 - *Complete*
+- [ ] 1.1 - *Started*
 
 End of Sprint:
-* Comment
-* Document
-* Address Code Debt
+- [ ] Comment
+- [ ] Document
+- [ ] Address Code Debt
+- [ ] Plan Next Sprint
 
 ## Roadmap
 
