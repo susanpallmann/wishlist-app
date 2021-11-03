@@ -5,13 +5,28 @@ Better name hopefully to come. The idea is simple:
 
 My family lives in multiple states far away. Every year for Christmas my family has me create a series of Google Docs to help coordinate gifts, avoiding duplicate gifts and better informing everyone on what sort of gifts each family member is interested in receiving. As my family grows, maintaining the Google Doc tradition has gotten to take me quite a while, and it could make for an interesting (but still relatively simple) web app.
 
-I don't really plan to launch this; the real point of this project is just to regularly work on and finish a project, similar to [color-me-2](https://github.com/susanpallmann/color-me-2).
+I don't really plan to launch this at this point; the real point of this project is just to regularly work on and finish a project, similar to [color-me-2](https://github.com/susanpallmann/color-me-2).
 
 **Current Version:** 0.0
 
 ## Contents
 
+## Current Sprint
+Sprint 1
+*10/31 - 11/06*
+Features Planned:
+* 0.1
+* 0.2
+* 0.3
+* 0.4
+
 ## Roadmap
+
+### 0.0 - Project Initialization
+* 0.1 Roadmap Design
+* 0.2 Repository Set-Up
+* 0.3 Firebase Project Set Up
+* 0.4 Connect Firebase to GitHub Repo.
 
 ### 1.0 - MVP
 **Features:**
