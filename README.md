@@ -10,9 +10,12 @@ I don't really plan to launch this at this point; the real point of this project
 **Current Version:** 0.0
 
 ## Contents
+[Current Sprint](#current-sprint)
+[Roadmap](#roadmap)
 
-## Current Sprint
+## Sprint
 **Sprint 1**
+
 *10/31 - 11/06*
 
 Features Planned:
