@@ -21,7 +21,7 @@ I don't really plan to launch this at this point; the real point of this project
 *10/31 - 11/06*
 
 Features:
-* 0.1 - *Not Started*
+* 0.1 - *Tentatively Complete*
 * 0.2
 * 0.3
 * 0.4
