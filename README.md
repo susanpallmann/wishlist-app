@@ -10,8 +10,12 @@ I don't really plan to launch this at this point; the real point of this project
 **Current Version:** 0.0
 
 ## Contents
-[Current Sprint](#current-sprint)
-[Roadmap](#roadmap)
+* [Current Sprint](#current-sprint)
+* [Roadmap](#roadmap)
+  * [0.0](#00---project-initialization)
+  * [1.0](#10---mvp)
+  * [2.0](#20---nice-to-haves)
+  * [3.0](#30---true-web-app)
 
 ## Sprint
 **Sprint 1**
