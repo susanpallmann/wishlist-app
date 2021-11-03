@@ -7,7 +7,7 @@ My family lives in multiple states far away. Every year for Christmas my family 
 
 I don't really plan to launch this at this point; the real point of this project is just to regularly work on and finish a project, similar to [color-me-2](https://github.com/susanpallmann/color-me-2).
 
-**Current Version:** 0.0
+**Current Version:** 0.4  - *Complete*
 
 ## Contents
 * [Current Sprint](#current-sprint)
@@ -21,18 +21,18 @@ I don't really plan to launch this at this point; the real point of this project
 *10/31 - 11/06*
 
 Features:
-* 0.1 - *Tentatively Complete*
-* 0.2
-* 0.3
-* 0.4
+* 0.1 - *Complete*
+* 0.2 - *Complete*
+* 0.3 - *Complete*
+* 0.4 - *Complete*
 
 ## Roadmap
 
-### 0.0 - Project Initialization
-* 0.1 Roadmap Design
-* 0.2 Repository Set-Up
-* 0.3 Firebase Project Set Up
-* 0.4 Connect Firebase to GitHub Repo.
+### 0.0 - Project Initialization - *Complete*
+* 0.1 Roadmap Design - *Complete*
+* 0.2 Repository Set-Up - *Complete*
+* 0.3 Firebase Project Set Up - *Complete*
+* 0.4 Connect Firebase to GitHub Repo. - *Complete*
 
 ### 1.0 - MVP
 **Features:**
