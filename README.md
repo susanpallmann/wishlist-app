@@ -41,4 +41,4 @@ I don't really plan to launch this; the real point of this project is just to re
 ### 3.0 - True Web App
 **Features:**
 * 3.1 Offline Persistance
-* 
+* 3.2 Web App Functionality Research
