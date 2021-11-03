@@ -12,7 +12,7 @@ I don't really plan to launch this at this point; the real point of this project
 ## Contents
 
 ## Current Sprint
-Sprint 1
+**Sprint 1**
 
 *10/31 - 11/06*
 
