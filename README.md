@@ -7,7 +7,7 @@ My family lives in multiple states far away. Every year for Christmas my family 
 
 I don't really plan to launch this at this point; the real point of this project is just to regularly work on and finish a project, similar to [color-me-2](https://github.com/susanpallmann/color-me-2).
 
-**Current Version:** 0.4  - *Complete*
+**Current Version:** 1.0
 
 ## Contents
 * [Current Sprint](#current-sprint)
@@ -25,6 +25,7 @@ Features:
 * 0.2 - *Complete*
 * 0.3 - *Complete*
 * 0.4 - *Complete*
+* 1.1 - *Started*
 
 ## Roadmap
 
