@@ -12,10 +12,10 @@ I don't really plan to launch this at this point; the real point of this project
 ## Contents
 * [Current Sprint](#current-sprint)
 * [Roadmap](#roadmap)
-  * [0.0](#00---project-initialization)
-  * [1.0](#10---mvp)
-  * [2.0](#20---nice-to-haves)
-  * [3.0](#30---true-web-app)
+  * [0.0 - Project Initialization](#00---project-initialization)
+  * [1.0 - MVP](#10---mvp)
+  * [2.0 - Nice to Haves](#20---nice-to-haves)
+  * [3.0 - True Web App](#30---true-web-app)
 
 ## Sprint
 **Sprint 1**
