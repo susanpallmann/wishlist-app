@@ -13,7 +13,9 @@ I don't really plan to launch this at this point; the real point of this project
 
 ## Current Sprint
 Sprint 1
+
 *10/31 - 11/06*
+
 Features Planned:
 * 0.1
 * 0.2
