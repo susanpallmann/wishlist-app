@@ -27,6 +27,11 @@ Features:
 * 0.4 - *Complete*
 * 1.1 - *Started*
 
+End of Sprint:
+* Comment
+* Document
+* Address Code Debt
+
 ## Roadmap
 
 ### 0.0 - Project Initialization - *Complete*
