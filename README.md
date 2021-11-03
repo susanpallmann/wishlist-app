@@ -7,8 +7,38 @@ My family lives in multiple states far away. Every year for Christmas my family 
 
 I don't really plan to launch this; the real point of this project is just to regularly work on and finish a project, similar to [color-me-2](https://github.com/susanpallmann/color-me-2).
 
+**Current Version:** 0.0
+
 ## Contents
 
 ## Roadmap
 
-* ### MVP
+### 1.0 - MVP
+**Features:**
+* 1.1 Basic Authentication
+* 1.2 Create Families
+* 1.3 Join Families
+* 1.4 Manage Joined Families
+* 1.5 Family Settings
+* 1.6 Create Lists
+  * 1.6.1 Create List Items
+  * 1.6.2 List Item Links
+  * 1.6.3 List Item Comments
+* 1.7 Edit Lists
+  * 1.7.1 Edit List Items
+* 1.8 View Lists
+* 1.9 Claim List Items
+* 1.10 Claim Visibility on User's Own List
+
+### 2.0 - Nice to Haves
+**Features:**
+* 2.1 Create Profile
+* 2.2 Profile Information (i.e. Addresses)
+* 2.3 Profile Information Permissions (Family-Specific vs. General)
+* 2.4 Family Invite Links
+* 2.5 Dark Mode
+
+### 3.0 - True Web App
+**Features:**
+* 3.1 Offline Persistance
+* 
