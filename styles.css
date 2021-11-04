@@ -25,6 +25,7 @@ body {
 
 .flex-vertical {
   flex-direction: column;
+  row-gap: 56px;
 }
 
 .flex-vertical form {
@@ -37,16 +38,19 @@ body {
   align-items: center;
 }
 
+/* Buttons */
 
 /* Typography */
 h1 {
   margin: 0;
   font-family: 'Roboto Slab', sans-serif;
+  font-weight: 700;
 }
 
 h2, h3, h4, p {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
 /* Buttons */
