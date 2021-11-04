@@ -26,6 +26,8 @@ body {
 .flex-vertical {
   flex-direction: column;
   row-gap: 56px;
+  padding-top: 20px;
+  box-sizing: border-box;
 }
 
 .flex-vertical form {
@@ -35,6 +37,8 @@ body {
 
 .splash.flex-vertical {
   row-gap: 64px;
+  padding-top: 256px;
+  box-sizing: border-box;
   align-items: center;
 }
 
