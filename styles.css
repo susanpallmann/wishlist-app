@@ -23,8 +23,9 @@ body {
   display: flex;
 }
 
-.buttons-container.flex-vertical {
+.buttons-container {
   display: flex;
+  align-items: center;
 }
 
 .flex-vertical {
@@ -47,6 +48,7 @@ body {
 }
 
 .buttons-container.flex-vertical {
+  flex-direction: column;
   row-gap: 16px;
 }
 
