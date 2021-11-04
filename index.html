@@ -50,8 +50,69 @@
     <script src="app.js"></script>  
   </head>
   <body id="app">
-    <div state="splash"></div>
-    <div state="log-in"></div>
-    <div state="sign-up"></div>
+    <div state="splash" bg-color="red">
+      <div class="container">
+        <div class="row">
+          <div class="column span12">
+            <div class="flex-container splash flex-vertical">
+              <h1>Wishlist App</h1>
+              <p></p>
+              <div class="buttons-container flex-vertical">
+                <span class="small-button white"><p>Log In</p></span>
+                <span class="small-button medium-red"><p>Sign Up</p></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div state="log-in" bg-color="white">
+      <div class="container">
+        <div class="row">
+          <div class="column span12">
+            <div class="flex-container flex-vertical">
+              <span class="round-button"><i class="material-icons-round">navigate_before</i><p>Back</p></span>
+              <h1>Log In</h1>
+              <div class="form-container flex-vertical">
+                <form id="login-form">
+                  <label for="login-email">Email</label>
+                  <input type="text" name="login-email" id="login-email" placeholder="example@example.com">
+                  <label for="login-password">Password</label>
+                  <input type="password" name="login-password" id="login-password" placeholder="password">
+                </form>
+              </div>
+              <div class="buttons-container flex-vertical">
+                <span class="small-button light-red"><p>Log In</p></span>
+                <span class="small-button white"><p>Don’t have an account? Sign Up</p></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div state="sign-up" bg-color="red">
+      <div class="container">
+        <div class="row">
+          <div class="column span12">
+            <div class="flex-container flex-vertical">
+              <span class="round-button"><i class="material-icons-round">navigate_before</i><p>Back</p></span>
+              <h1>Sign Up</h1>
+              <div class="form-container flex-vertical">
+                <form id="signup-form">
+                  <label for="signup-email">Email</label>
+                  <input type="text" name="signup-email" id="signup-email" placeholder="example@example.com">
+                  <label for="signup-password">Password</label>
+                  <input type="password" name="signup-password" id="signup-password" placeholder="password">
+                </form>
+              </div>
+              <div class="buttons-container flex-vertical">
+                <span class="small-button light-red"><p>Sign Up</p></span>
+                <span class="small-button white"><p>Already have an account? Log In</p></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
