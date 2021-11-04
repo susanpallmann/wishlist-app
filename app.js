@@ -67,14 +67,6 @@ function changeState(newState) {
     $(`[state='${destination}']`).fadeIn();
 }
 
-// "Router" function for buttons that change the app's UX state
-$('.state-change').click(function(event) {
-    
-    // Gets destination from button's "destination" attribute
-    let destination = $('this').attr('destination');
-    changeState(destination);
-});
-
 // If an element with DOM attribute "function" set to "signout" is clicked
 $(document).on('click', '#signout', function() {
 
@@ -108,4 +100,15 @@ $(document).on('click', '#signup', function() {
     // Prevent default click behavior
     event.preventDefault();
     return false;
+});
+
+$(document).ready(function () {
+
+    // "Router" function for buttons that change the app's UX state
+    $('.state-change').click(function(event) {
+
+        // Gets destination from button's "destination" attribute
+        let destination = $('this').attr('destination');
+        changeState(destination);
+    });
 });
