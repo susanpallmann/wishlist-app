@@ -63,6 +63,7 @@ function signUp(email, password) {
 
 // Shows destination state and hides other states
 function changeState(destination) {
+    console.log(destination);
     $('.state').fadeOut();
     $(`.state[state='${destination}']`).fadeIn();
 }
@@ -109,6 +110,7 @@ $(document).ready(function () {
 
         // Gets destination from button's "destination" attribute
         let destination = $('this').attr('destination');
+        console.log(destination);
         changeState(destination);
     });
 });
