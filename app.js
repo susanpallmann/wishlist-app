@@ -59,7 +59,21 @@ function signUp(email, password) {
     });
 }
 
-/* DOM Interactions */
+/* DOM-User Interactions */
+
+// Shows destination state and hides other states
+function changeState(newState) {
+    $('.state').fadeOut();
+    $(`[state='${destination}']`).fadeIn();
+}
+
+// "Router" function for buttons that change the app's UX state
+$('.state-change').click(function(event) {
+    
+    // Gets destination from button's "destination" attribute
+    let destination = $('this').attr('destination');
+    changeState(destination);
+});
 
 // If an element with DOM attribute "function" set to "signout" is clicked
 $(document).on('click', '#signout', function() {
