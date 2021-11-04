@@ -51,13 +51,36 @@ h1 {
   font-weight: 700;
 }
 
-h2, h3, h4, p {
+h2, h3, h4, p, label {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
 }
 
 /* Buttons */
+.small-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 24px;
+  border-radius: 12px;
+}
+
+.small-button.light-red {
+  background-color: var(--light-red);
+  color: var(--white);
+}
+
+.small-button.medium-red {
+  background-color: var(--medium-red);
+  color: var(--white);
+}
+
+.small-button.white {
+  background-color: var(--white);
+  color: var(--dark-green);
+}
 
 /* Special Coloration Styles */
 div[bg-color="red"] {
