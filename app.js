@@ -63,9 +63,23 @@ function signUp(email, password) {
 
 // Shows destination state and hides other states
 function changeState(destination) {
-    console.log(destination);
-    $('.state').fadeOut();
-    $(`.state[state='${destination}']`).fadeIn();
+    
+    
+    $('#app').queue(function() {
+        
+        // Fade out current state(s)
+        $('.state').fadeOut(400);
+
+        $.dequeue(this);
+    }).delay(400).queue(function() {
+        
+        // Fade in new (destination) state
+        $(`.state[state="${destination}"]`).fadeIn();
+        
+        // Temporarily making sure our testing state stays as well (TODO: remove)
+        $('.state[state="testing"]').fadeIn();
+        $.dequeue(this);
+    });
 }
 
 // If an element with DOM attribute "function" set to "signout" is clicked
@@ -110,7 +124,6 @@ $(document).ready(function () {
 
         // Gets destination from button's "destination" attribute
         let destination = $(this).attr('destination');
-        console.log(destination);
         changeState(destination);
     });
 });
