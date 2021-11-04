@@ -86,15 +86,27 @@ $('document').ready(function () {
         return false;
     });
 
-    // If an element with DOM attribute "function" set to "login" is clicked
+    // If an element with ID "signup" is clicked
     $('document').on('click', '#signup', function() {
 
-        console.log('this ran');
+        console.log('this ran 1');
         // Call function logIn to handle authentication log in
         signUp($('#signup-email').val(), $('#signup-password'));
 
         // Prevent default click behavior
-        event.preventDefault();
-        return false;
+        //event.preventDefault();
+        //return false;
     });
 });
+
+// If an element with ID "signup" is clicked
+    $('document').on('click', '#signup', function() {
+
+        console.log('this ran 2');
+        // Call function logIn to handle authentication log in
+        signUp($('#signup-email').val(), $('#signup-password'));
+
+        // Prevent default click behavior
+        //event.preventDefault();
+        //return false;
+    });
