@@ -62,7 +62,7 @@ function signUp(email, password) {
 /* DOM-User Interactions */
 
 // Shows destination state and hides other states
-function changeState(newState) {
+function changeState(destination) {
     $('.state').fadeOut();
     $(`[state='${destination}']`).fadeIn();
 }
