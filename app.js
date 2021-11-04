@@ -106,10 +106,10 @@ $(document).on('click', '#signup', function() {
 $(document).ready(function () {
 
     // "Router" function for buttons that change the app's UX state
-    $('.state-change').click(function() {
+    $('.state-change').click(function(event) {
 
         // Gets destination from button's "destination" attribute
-        let destination = $('this').attr('destination');
+        let destination = $(this).attr('destination');
         console.log(destination);
         changeState(destination);
     });
