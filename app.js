@@ -87,7 +87,7 @@ $('document').ready(function () {
     });
 
     // If an element with ID "signup" is clicked
-    $('document').on('click', '#signup', function() {
+    $(document).on('click', '#signup', function() {
 
         console.log('this ran 1');
         // Call function logIn to handle authentication log in
@@ -100,7 +100,7 @@ $('document').ready(function () {
 });
 
 // If an element with ID "signup" is clicked
-    $('document').on('click', '#signup', function() {
+    $(document).on('click', '#signup', function() {
 
         console.log('this ran 2');
         // Call function logIn to handle authentication log in
