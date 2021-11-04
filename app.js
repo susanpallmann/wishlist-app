@@ -89,6 +89,7 @@ $('document').ready(function () {
     // If an element with DOM attribute "function" set to "login" is clicked
     $('document').on('click', '#signup', function() {
 
+        console.log('this ran');
         // Call function logIn to handle authentication log in
         signUp($('#signup-email').val(), $('#signup-password'));
 
