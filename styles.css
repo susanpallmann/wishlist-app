@@ -23,6 +23,10 @@ body {
   display: flex;
 }
 
+.buttons-container.flex-vertical {
+  display: flex;
+}
+
 .flex-vertical {
   flex-direction: column;
   row-gap: 56px;
@@ -40,6 +44,10 @@ body {
   padding-top: 256px;
   box-sizing: border-box;
   align-items: center;
+}
+
+.buttons-container.flex-vertical {
+  row-gap: 16px;
 }
 
 /* Buttons */
