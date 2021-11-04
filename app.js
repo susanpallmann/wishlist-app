@@ -61,36 +61,39 @@ function signUp(email, password) {
 
 /* DOM Interactions */
 
-// If an element with DOM attribute "function" set to "signout" is clicked
-$('document').on('click', '#signout', function() {
+$('document').ready(function () {
     
-    // Call function signOut to handle authentication sign out
-    signOut();
+    // If an element with DOM attribute "function" set to "signout" is clicked
+    $('document').on('click', '#signout', function() {
 
-    // Prevent default click behavior
-    event.preventDefault();
-    return false;
-});
+        // Call function signOut to handle authentication sign out
+        signOut();
+
+        // Prevent default click behavior
+        event.preventDefault();
+        return false;
+    });
 
 
-// If an element with DOM attribute "function" set to "login" is clicked
-$('document').on('click', '#login', function() {
-    
-    // Call function logIn to handle authentication log in
-    logIn($('#login-email').val(), $('#login-password'));
+    // If an element with DOM attribute "function" set to "login" is clicked
+    $('document').on('click', '#login', function() {
 
-    // Prevent default click behavior
-    event.preventDefault();
-    return false;
-});
+        // Call function logIn to handle authentication log in
+        logIn($('#login-email').val(), $('#login-password'));
 
-// If an element with DOM attribute "function" set to "login" is clicked
-$('document').on('click', '#signup', function() {
-    
-    // Call function logIn to handle authentication log in
-    signUp($('#signup-email').val(), $('#signup-password'));
+        // Prevent default click behavior
+        event.preventDefault();
+        return false;
+    });
 
-    // Prevent default click behavior
-    event.preventDefault();
-    return false;
+    // If an element with DOM attribute "function" set to "login" is clicked
+    $('document').on('click', '#signup', function() {
+
+        // Call function logIn to handle authentication log in
+        signUp($('#signup-email').val(), $('#signup-password'));
+
+        // Prevent default click behavior
+        event.preventDefault();
+        return false;
+    });
 });
