@@ -53,8 +53,6 @@ body {
   row-gap: 16px;
 }
 
-/* Buttons */
-
 /* Typography */
 h1 {
   margin: 0;
@@ -90,6 +88,25 @@ h2, h3, h4, p, label {
 
 .small-button.white {
   background-color: var(--white);
+  color: var(--dark-green);
+}
+
+.round-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px 24px 16px 16px;
+  border-radius: 50px;
+  align-self: baseline;
+}
+
+div[bg-color="red"] .round-button {
+  background-color: var(--medium-red);
+  color: var(--white);
+}
+
+div[bg-color="white"] .round-button {
+  background-color: var(--light-grey);
   color: var(--dark-green);
 }
 
