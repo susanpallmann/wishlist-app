@@ -53,6 +53,16 @@ body {
   row-gap: 16px;
 }
 
+.state {
+  height: 100vh;
+}
+
+.state[state="testing"] {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
 /* Typography */
 h1 {
   margin: 0;
@@ -74,6 +84,7 @@ h2, h3, h4, p, label {
   align-items: center;
   padding: 18px 24px;
   border-radius: 12px;
+  cursor: pointer;
 }
 
 .small-button.light-red {
@@ -98,6 +109,7 @@ h2, h3, h4, p, label {
   padding: 16px 24px 16px 16px;
   border-radius: 50px;
   align-self: baseline;
+  cursor: pointer;
 }
 
 div[bg-color="red"] .round-button {
