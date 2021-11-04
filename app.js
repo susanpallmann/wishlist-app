@@ -37,6 +37,28 @@ function logIn(email, password) {
     });
 }
 
+function signUp(email, password) {
+    
+    // Firebase auth sign up
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    
+        // If sign in was successful
+        .then((userCredential) => {
+        
+            // User object (not currently needed for anything)
+            /* let user = userCredential.user; */
+
+        })
+    
+        // If an error occured
+        .catch((error) => {
+        
+            // Error handling from Firebase (not currently needed for anything)
+            /* let errorCode = error.code; */
+            /* let errorMessage = error.message; */
+    });
+}
+
 /* DOM Interactions */
 
 // If an element with DOM attribute "function" set to "signout" is clicked
@@ -56,6 +78,17 @@ $('document').on('click', '#login', function() {
     
     // Call function logIn to handle authentication log in
     logIn($('#login-email').val(), $('#login-password'));
+
+    // Prevent default click behavior
+    event.preventDefault();
+    return false;
+});
+
+// If an element with DOM attribute "function" set to "login" is clicked
+$('document').on('click', '#signup', function() {
+    
+    // Call function logIn to handle authentication log in
+    signUp($('#signup-email').val(), $('#signup-password'));
 
     // Prevent default click behavior
     event.preventDefault();
