@@ -64,7 +64,7 @@ function signUp(email, password) {
 // Shows destination state and hides other states
 function changeState(destination) {
     $('.state').fadeOut();
-    $(`[state='${destination}']`).fadeIn();
+    $(`.state['state'='${destination}']`).fadeIn();
 }
 
 // If an element with DOM attribute "function" set to "signout" is clicked
