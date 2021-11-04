@@ -25,7 +25,7 @@ Features:
 - [X] 0.2 - *Complete*
 - [X] 0.3 - *Complete*
 - [X] 0.4 - *Complete*
-- [ ] [1.1](https://github.com/susanpallmann/wishlist-app/issues/1) - *Started*
+- [ ] [1.1](https://github.com/susanpallmann/wishlist-app/issues/1) - *In Progress*
 
 End of Sprint:
 - [ ] Comment
