@@ -1,4 +1,63 @@
+/* Colors */
+:root {
+  --light-red: #CE3C3C;
+  --medium-red: #AF3030;
+  --dark-red: #711818;
+  --white: #FFFFFF;
+  --light-grey: #F8F8F8;
+  --faint-blue: #EDF2F3;
+  --faint-green: #919796;
+  --medium-green: #4F6B6B;
+  --dark-green: #343D39;
+  --black: #000000;
+}
+
+/* Base HTML Styling */
 body {
   margin: 0;
   padding: 0;
+}
+
+/* Flexbox Styles */
+.flex-container {
+  display: flex;
+}
+
+.flex-vertical {
+  flex-direction: column;
+}
+
+.flex-vertical form {
+  display: flex;
+  flex-direction: column;
+}
+
+.splash.flex-vertical {
+  row-gap: 64px;
+  align-items: center;
+}
+
+
+/* Typography */
+h1 {
+  margin: 0;
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+h2, h3, h4, p {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Buttons */
+
+/* Special Coloration Styles */
+div[bg-color="red"] {
+  background-color: var(--light-red);
+  color: var(--white);
+}
+
+div[bg-color="white"] {
+  background-color: var(--white);
+  color: var(--dark-green);
 }
