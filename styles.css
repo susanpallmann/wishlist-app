@@ -2,10 +2,13 @@
 :root {
   --light-red: #CE3C3C;
   --medium-red: #AF3030;
+  --medium-dark-red: #932626;
   --dark-red: #711818;
   --white: #FFFFFF;
   --light-grey: #F8F8F8;
+  --darker-grey: #F4F4F4;
   --faint-blue: #EDF2F3;
+  --light-blue: #E4EDEF;
   --faint-green: #919796;
   --medium-green: #4F6B6B;
   --dark-green: #343D39;
@@ -123,14 +126,26 @@ div[bg-color="red"] input[type="text"], div[bg-color="red"] input[type="password
   color: var(--white);
 }
 
+.small-button.light-red:hover, .small-button.light-red:active, .small-button.light-red:focus {
+  background-color: var(--medium-red);
+}
+
 .small-button.medium-red {
   background-color: var(--medium-red);
   color: var(--white);
 }
 
+.small-button.medium-red:hover, .small-button.medium-red:active, .small-button.medium-red:focus {
+  background-color: var(--medium-dark-red);
+}
+
 .small-button.white {
   background-color: var(--white);
   color: var(--dark-green);
+}
+
+.small-button.white:hover, .small-button.white:active, .small-button.white:focus {
+  background-color: var(--light-grey);
 }
 
 .round-button {
@@ -148,9 +163,17 @@ div[bg-color="red"] .round-button {
   color: var(--white);
 }
 
+div[bg-color="red"] .round-button:active, div[bg-color="red"] .round-button:focus, div[bg-color="red"] .round-button:hover {
+  background-color: var(--medium-dark-red);
+}
+
 div[bg-color="white"] .round-button {
   background-color: var(--light-grey);
   color: var(--dark-green);
+}
+
+div[bg-color="red"] .round-button:active, div[bg-color="red"] .round-button:focus, div[bg-color="red"] .round-button:hover {
+  background-color: var(--darker-grey);
 }
 
 /* Special Coloration Styles */
@@ -159,7 +182,15 @@ div[bg-color="red"] {
   color: var(--white);
 }
 
+div[bg-color="red"]:active, div[bg-color="red"]:focus, div[bg-color="red"]:hover {
+  background-color: var(--medium-red);
+}
+
 div[bg-color="white"] {
   background-color: var(--white);
   color: var(--dark-green);
+}
+
+div[bg-color="white"]:active, div[bg-color="white"]:focus, div[bg-color="white"]:hover {
+  background-color: var(--light-grey);
 }
