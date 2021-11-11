@@ -18,7 +18,7 @@ I don't really plan to launch this at this point; the real point of this project
   * [3.0 - True Web App](#30---true-web-app)
 
 ## Current Sprint
-*10/31 - 11/06*
+*10/31 - 11/13*
 
 Features:
 - [X] 0.1 - *Complete*
@@ -28,7 +28,7 @@ Features:
 - [X] [1.1](https://github.com/susanpallmann/wishlist-app/issues/1) - *In Progress*
 
 End of Sprint:
-- [ ] Comment
+- [X] Comment
 - [ ] Document
 - [ ] Address Code Debt
 - [ ] Plan Next Sprint
