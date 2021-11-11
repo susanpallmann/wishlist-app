@@ -44,7 +44,7 @@ End of Sprint:
 
 ### 1.0 - MVP
 **Features:**
-* 1.1 Basic Authentication
+* [1.1](https://github.com/susanpallmann/wishlist-app/issues/1) Basic Authentication
 * 1.2 Create Families
 * 1.3 Join Families
 * 1.4 Manage Joined Families
