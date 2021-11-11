@@ -182,15 +182,7 @@ div[bg-color="red"] {
   color: var(--white);
 }
 
-div[bg-color="red"]:active, div[bg-color="red"]:focus, div[bg-color="red"]:hover {
-  background-color: var(--medium-red);
-}
-
 div[bg-color="white"] {
   background-color: var(--white);
   color: var(--dark-green);
-}
-
-div[bg-color="white"]:active, div[bg-color="white"]:focus, div[bg-color="white"]:hover {
-  background-color: var(--light-grey);
 }
