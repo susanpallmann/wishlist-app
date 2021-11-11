@@ -119,6 +119,7 @@ div[bg-color="red"] input[type="text"], div[bg-color="red"] input[type="password
   padding: 18px 24px;
   border-radius: 12px;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 .small-button.light-red {
@@ -156,6 +157,7 @@ div[bg-color="red"] input[type="text"], div[bg-color="red"] input[type="password
   border-radius: 50px;
   align-self: baseline;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 div[bg-color="red"] .round-button {
