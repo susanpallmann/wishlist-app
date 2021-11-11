@@ -119,6 +119,21 @@ $(document).on('click', '#signup', function() {
 
 $(document).ready(function () {
 
+    // Tracker to handle whether or not a user is currently logged in, updates UI accordingly
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            
+            // User is signed in
+            // User object (not currently needed for anything)
+            /* let uid = user.uid; */
+            
+        } else {
+            
+            // User is signed out
+        }
+    });
+    
+    
     // "Router" function for buttons that change the app's UX state
     $('.state-change').click(function(event) {
 
