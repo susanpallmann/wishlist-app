@@ -36,6 +36,7 @@ End of Sprint:
 ## Roadmap
 
 ### 0.0 - Project Initialization - *Complete*
+*Notice: no issues were written for project initialization features.*
 * 0.1 Roadmap Design - *Complete*
 * 0.2 Repository Set-Up - *Complete*
 * 0.3 Firebase Project Set Up - *Complete*

@@ -1,4 +1,190 @@
+/* Colors */
+:root {
+  --light-red: #CE3C3C;
+  --medium-red: #AF3030;
+  --medium-dark-red: #932626;
+  --dark-red: #711818;
+  --white: #FFFFFF;
+  --light-grey: #F2F2F2;
+  --darker-grey: #E9E9E9;
+  --faint-blue: #EDF2F3;
+  --light-blue: #E4EDEF;
+  --faint-green: #919796;
+  --medium-green: #4F6B6B;
+  --dark-green: #343D39;
+  --black: #000000;
+}
+
+/* Base HTML Styling */
 body {
   margin: 0;
   padding: 0;
+}
+
+/* Flexbox Styles */
+.flex-container {
+  display: flex;
+}
+
+.form-container.flex-vertical {
+  width: 100%;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+}
+
+.flex-vertical {
+  flex-direction: column;
+  row-gap: 56px;
+  padding-top: 20px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.flex-vertical form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.splash.flex-vertical {
+  row-gap: 64px;
+  padding-top: 256px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.buttons-container.flex-vertical {
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.state {
+  height: 100vh;
+}
+
+.state[state="testing"] {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+/* Typography */
+h1 {
+  margin: 0;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 700;
+}
+
+h2, h3, h4, p, label {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+/* Forms */
+input[type="text"], input[type="password"] {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 18px 16px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+div[bg-color="white"] input[type="text"], div[bg-color="white"] input[type="password"] {
+  background-color: var(--faint-blue);
+  color: var(--dark-green);
+}
+
+div[bg-color="red"] input[type="text"], div[bg-color="red"] input[type="password"] {
+  background-color: var(--white);
+  color: var(--dark-green);
+}
+
+/* Buttons */
+.small-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.small-button.light-red {
+  background-color: var(--light-red);
+  color: var(--white);
+}
+
+.small-button.light-red:hover, .small-button.light-red:active, .small-button.light-red:focus {
+  background-color: var(--medium-red);
+}
+
+.small-button.medium-red {
+  background-color: var(--medium-red);
+  color: var(--white);
+}
+
+.small-button.medium-red:hover, .small-button.medium-red:active, .small-button.medium-red:focus {
+  background-color: var(--medium-dark-red);
+}
+
+.small-button.white {
+  background-color: var(--white);
+  color: var(--dark-green);
+}
+
+.small-button.white:hover, .small-button.white:active, .small-button.white:focus {
+  background-color: var(--light-grey);
+}
+
+.round-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px 24px 16px 16px;
+  border-radius: 50px;
+  align-self: baseline;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+div[bg-color="red"] .round-button {
+  background-color: var(--medium-red);
+  color: var(--white);
+}
+
+div[bg-color="red"] .round-button:active, div[bg-color="red"] .round-button:focus, div[bg-color="red"] .round-button:hover {
+  background-color: var(--medium-dark-red);
+}
+
+div[bg-color="white"] .round-button {
+  background-color: var(--light-grey);
+  color: var(--dark-green);
+}
+
+div[bg-color="white"] .round-button:active, div[bg-color="white"] .round-button:focus, div[bg-color="white"] .round-button:hover {
+  background-color: var(--darker-grey);
+}
+
+/* Special Coloration Styles */
+div[bg-color="red"] {
+  background-color: var(--light-red);
+  color: var(--white);
+}
+
+div[bg-color="white"] {
+  background-color: var(--white);
+  color: var(--dark-green);
 }
