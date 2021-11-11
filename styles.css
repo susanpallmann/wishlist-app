@@ -172,7 +172,7 @@ div[bg-color="white"] .round-button {
   color: var(--dark-green);
 }
 
-div[bg-color="red"] .round-button:active, div[bg-color="red"] .round-button:focus, div[bg-color="red"] .round-button:hover {
+div[bg-color="white"] .round-button:active, div[bg-color="white"] .round-button:focus, div[bg-color="white"] .round-button:hover {
   background-color: var(--darker-grey);
 }
 
