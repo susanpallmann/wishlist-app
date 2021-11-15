@@ -16,20 +16,20 @@ I don't really plan to launch this at this point; the real point of this project
   * [1.0 - MVP](#10---mvp)
   * [2.0 - Nice to Haves](#20---nice-to-haves)
   * [3.0 - True Web App](#30---true-web-app)
+* [Dev Diary](#dev-diary)
 
 ## Current Sprint
-*10/31 - 11/13*
+*11/14 - 11/27*
+
+Notes:
+
+*This sprint overlaps with Thanksgiving, bandwidth for dev projects will be reduced.*
 
 Features:
-- [X] 0.1 - *Complete*
-- [X] 0.2 - *Complete*
-- [X] 0.3 - *Complete*
-- [X] 0.4 - *Complete*
-- [X] [1.1](https://github.com/susanpallmann/wishlist-app/issues/1) - *Complete*
+- [ ] [1.2](https://github.com/susanpallmann/wishlist-app/issues/2)  - *Started*
 
 End of Sprint:
-- [X] Comment
-- [ ] Document
+- [ ] Comment
 - [ ] Address Code Debt
 - [ ] Plan Next Sprint
 
@@ -71,3 +71,18 @@ End of Sprint:
 **Features:**
 * 3.1 Offline Persistance
 * 3.2 Web App Functionality Research
+
+## Dev Diary
+*10/31 - 11/13*
+
+Features:
+- [X] 0.1 - *Complete*
+- [X] 0.2 - *Complete*
+- [X] 0.3 - *Complete*
+- [X] 0.4 - *Complete*
+- [X] [1.1](https://github.com/susanpallmann/wishlist-app/issues/1) - *Complete*
+
+End of Sprint:
+- [X] Comment
+- [X] Address Code Debt
+- [X] Plan Next Sprint
