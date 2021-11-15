@@ -73,7 +73,9 @@ End of Sprint:
 * 3.2 Web App Functionality Research
 
 ## Dev Diary
-*10/31 - 11/13*
+
+### Sprints
+#### 10/31 - 11/13
 
 Features:
 - [X] 0.1 - *Complete*
