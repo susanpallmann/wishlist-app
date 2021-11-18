@@ -84,6 +84,35 @@ h2, h3, h4, p, label {
   font-weight: 600;
 }
 
+/* List Items */
+.flex-container.flex-vertical.no-upper-button {
+  padding-top: 130px;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+  background-color: #EDF2F3;
+  border-radius: 12px;
+}
+
+.list-item .left {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+}
+
+.list-item .right {
+}
+
+.family-code {
+  opacity: 0.5;
+}
+
 /* Forms */
 input[type="text"], input[type="password"] {
   display: flex;
