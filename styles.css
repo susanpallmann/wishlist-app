@@ -100,7 +100,6 @@ h2, h3, h4, p, label {
   justify-content: space-between;
   align-items: flex-start;
   padding: 16px;
-  background-color: #EDF2F3;
   border-radius: 12px;
   width: 100%;
   box-sizing: border-box;
@@ -108,8 +107,20 @@ h2, h3, h4, p, label {
   transition: all 0.15s;
 }
 
-.list-item:hover, .list-item:active, .list-item:focus {
+.list-item[color="faint-blue"] {
+  background-color: var(--faint-blue);
+}
+
+.list-item[color="faint-blue"]:hover, .list-item[color="faint-blue"]:active, .list-item[color="faint-blue"]:focus {
     background-color: var(--light-blue);
+}
+
+.list-item[color="white"] {
+  background-color: var(--white);
+}
+
+.list-item[color="white"]:hover, .list-item[color="white"]:active, .list-item[color="white"]:focus {
+    background-color: var(--faint-blue);
 }
 
 .list-item .left {
