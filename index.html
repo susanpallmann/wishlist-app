@@ -143,7 +143,7 @@
                     <i class="material-icons-round">navigate_next</i>
                   </div>
                 </div>
-                <span class="long-button light-grey">
+                <span class="long-button light-grey state-change" destination="join-family">
                   <i class="material-icons-round">add_box</i>
                   <p>Add or Create Family</p>
                 </span>
@@ -151,10 +151,58 @@
                   <i class="material-icons-round">info</i>
                   <p>You have not joined any families yet! Families you join will appear in this list.</p>
                 </div>
-                <span class="long-button light-grey">
+                <span class="long-button light-grey state-change" destination="join-family">
                   <i class="material-icons-round">add_box</i>
                   <p>Join or Create Family</p>
                 </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="state" state="join-family" bg-color="white">
+      <div class="container">
+        <div class="row">
+          <div class="column span12">
+            <div class="flex-container flex-vertical">
+              <span class="round-button state-change" destination="my-families"><i class="material-icons-round">navigate_before</i><p>Cancel</p></span>
+              <h1>Join Family</h1>
+              <div class="form-container flex-vertical">
+                <form id="join-family-form">
+                  <label for="join-family-code">Family Code</label>
+                  <input type="text" name="join-family-code" id="join-family-code" placeholder="enter the family's 4-letter code">
+                </form>
+              </div>
+              <div class="buttons-container flex-vertical">
+                <span class="small-button light-red state-change" id="join-family" destination="my-families"><p>Join</p></span>
+                <span class="small-button white state-change" destination="create-family"><p>Create new family</p></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="state" state="create-family" bg-color="white">
+      <div class="container">
+        <div class="row">
+          <div class="column span12">
+            <div class="flex-container flex-vertical">
+              <span class="round-button state-change" destination="my-families"><i class="material-icons-round">navigate_before</i><p>Cancel</p></span>
+              <h1>Create Family</h1>
+              <div class="form-container flex-vertical">
+                <form id="create-family-form">
+                  <label for="create-family-name">Family Name</label>
+                  <input type="text" name="create-family-name" id="create-family-name" placeholder="Name your family">
+                  <label for="create-family-event">Event</label>
+                  <input type="password" name="create-family-event" id="create-family-event" placeholder="e.g. Christmas 2021">
+                  <label for="create-family-code">Generated Family Code</label>
+                  <input type="password" name="create-family-code" id="create-family-code" disabled>
+                </form>
+              </div>
+              <div class="buttons-container flex-vertical">
+                <span class="small-button light-red state-change" id="create-family" destination="my-families"><p>Create</p></span>
+                <span class="small-button white state-change" destination="join-family"><p>Join existing family</p></span>
               </div>
             </div>
           </div>
