@@ -33,6 +33,7 @@ body {
 .buttons-container {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .flex-vertical {
@@ -98,6 +99,7 @@ h2, h3, h4, p, label {
   background-color: #EDF2F3;
   border-radius: 12px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .list-item .left {
