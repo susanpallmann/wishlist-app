@@ -213,7 +213,7 @@ div[bg-color="red"] .round-button:active, div[bg-color="red"] .round-button:focu
 }
 
 div[bg-color="white"] .round-button {
-  background-color: var(--light-blue);
+  background-color: var(--light-grey);
   color: var(--dark-green);
 }
 
