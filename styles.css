@@ -21,6 +21,10 @@ body {
   padding: 0;
 }
 
+#app .container {
+  max-width: 600px;
+}
+
 /* Flexbox Styles */
 .flex-container {
   display: flex;
