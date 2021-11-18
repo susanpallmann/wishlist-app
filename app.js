@@ -37,7 +37,7 @@ function logIn(email, password) {
     });
 }
 
-function signUp(email, password) {
+function signUp(displayName, email, password) {
     
     // Firebase auth sign up
     firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -45,8 +45,21 @@ function signUp(email, password) {
         // If sign in was successful
         .then((userCredential) => {
         
-            // User object (not currently needed for anything)
-            /* let user = userCredential.user; */
+            const user = firebase.auth().currentUser;
+
+            user.updateProfile({
+                displayName: displayName
+                
+            }).then(() => {
+                
+                // Update successful
+                
+            }).catch((error) => {
+                
+                // Error handling from Firebase (not currently needed for anything)
+                /* let errorCode = error.code; */
+                /* let errorMessage = error.message; */
+            }); 
 
         })
     
@@ -110,7 +123,7 @@ $(document).on('click', '#login', function() {
 $(document).on('click', '#signup', function() {
 
     // Call function logIn to handle authentication log in
-    signUp($('#signup-email').val(), $('#signup-password').val());
+    signUp($('#signup-display-name').val(), $('#signup-email').val(), $('#signup-password').val());
 
     // Prevent default click behavior
     event.preventDefault();
