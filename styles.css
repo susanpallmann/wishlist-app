@@ -89,6 +89,10 @@ h2, h3, h4, p, label {
   font-weight: 600;
 }
 
+.text-left-align {
+  width: 100%;
+}
+
 /* List Items */
 .flex-container.flex-vertical.no-upper-button {
   padding-top: 130px;
