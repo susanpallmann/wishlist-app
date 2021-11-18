@@ -53,6 +53,7 @@ function signUp(displayName, email, password) {
             }).then(() => {
                 
                 // Update successful
+                console.log(user.displayName);
                 
             }).catch((error) => {
                 
