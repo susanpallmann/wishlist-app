@@ -238,13 +238,14 @@ div[bg-color="red"] input[type="text"], div[bg-color="red"] input[type="password
   column-gap: 8px;
   width: 100%;
   box-sizing: border-box;
+  transition: all 0.15s;
 }
 
-.small-button.light-grey {
+.long-button.light-grey {
   background-color: var(--light-grey);
 }
 
-.small-button.light-grey:hover, .small-button.light-grey:active, .small-button.light-grey:focus {
+.long-button.light-grey:hover, .small-button.light-grey:active, .small-button.light-grey:focus {
   background-color: var(--darker-grey);
 }
 
