@@ -183,7 +183,7 @@ div[bg-color="red"] input[type="text"], div[bg-color="red"] input[type="password
 }
 
 .small-button.white:hover, .small-button.white:active, .small-button.white:focus {
-  background-color: var(--light-grey);
+  background-color: var(--light-blue);
 }
 
 .round-button {
@@ -207,7 +207,7 @@ div[bg-color="red"] .round-button:active, div[bg-color="red"] .round-button:focu
 }
 
 div[bg-color="white"] .round-button {
-  background-color: var(--light-grey);
+  background-color: var(--light-blue);
   color: var(--dark-green);
 }
 
