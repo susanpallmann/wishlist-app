@@ -104,6 +104,12 @@ h2, h3, h4, p, label {
   border-radius: 12px;
   width: 100%;
   box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.list-item:hover, .list-item:active, .list-item:focus {
+    background-color: var(--light-blue);
 }
 
 .list-item .left {
