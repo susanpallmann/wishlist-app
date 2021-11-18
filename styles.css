@@ -97,12 +97,14 @@ h2, h3, h4, p, label {
   padding: 16px;
   background-color: #EDF2F3;
   border-radius: 12px;
+  width: 100%;
 }
 
 .list-item .left {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
+  column-gap: 8px;
   padding: 0px;
 }
 
