@@ -235,7 +235,7 @@ function loadFamiliesList() {
 /Load Family info on Family View */
 function populateFamilyView(code) {
     let location = firebase.database().ref('families/' + code);
-    location.on("value", snapshot => {
+    location.once("value", snapshot => {
         if (snapshot.val()) {
             let familyRecord = snapshot.val();
             let familyName = familyRecord.familyName;
@@ -248,7 +248,7 @@ function populateFamilyView(code) {
                     <div class="list-item" color="white" name="${memberName}">
                         <div class="left">
                             <i class="material-icons-round">person</i>
-                            <p class="member-name">${familyName}</p>
+                            <p class="member-name">${memberName}</p>
                         </div>
                         <div class="right">
                             <i class="material-icons-round">navigate_next</i>
@@ -257,7 +257,7 @@ function populateFamilyView(code) {
                 `);
             }
             $('#family-view').find('h1').text(familyName);
-            $('#family-view').find('h2').text(familyName);
+            $('#family-view').find('h2').text(activeEvent);
         }
     });
 }
