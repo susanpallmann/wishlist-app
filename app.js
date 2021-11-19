@@ -186,7 +186,7 @@ function createFamily(familyName, event, code) {
 function loadFamiliesList() {
     const user = firebase.auth().currentUser;
     let location = firebase.database().ref('users/' + user.uid);
-    location.on('value', function(snapshot) {
+    location.once('value', function(snapshot) {
         $('#loaded-family-list').empty();
         let data = snapshot.val();
         let activeFamily = data.activeFamily;
@@ -199,8 +199,12 @@ function loadFamiliesList() {
                 familyLocation.once('value', function(snapshot) {
                     let familyInfo = snapshot.val();
                     let familyName = familyInfo.familyName;
+                    let extraClass = '';
+                    if (family == activeFamily) {
+                        extraClass = 'selected';
+                    }
                     $('#loaded-family-list').prepend(`
-                        <div class="list-item state-change" color="faint-blue" destination="family-view" family-name="${familyName}">
+                        <div class="list-item state-change ${extaClass}" color="faint-blue" destination="family-view" family-name="${familyName}">
                             <div class="left">
                                 <i class="material-icons-round">people</i>
                                 <p class="family-name">${familyName}</p>
