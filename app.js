@@ -372,7 +372,5 @@ firebase.auth().onAuthStateChanged((user) => {
         // User is signed out
         globalUser = null;
     }
-    if ($('#my-families').is(":visible")) {
-        loadFamiliesList();
-    }
+    loadFamiliesList();
 });
