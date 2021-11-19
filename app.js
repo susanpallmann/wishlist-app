@@ -115,7 +115,7 @@ function verifyCode(code, callback) {
             
         // If the snapshot doesn't exist, we can set up the family
         } else {
-            callback(code);
+            return callback(code);
         }
     });
 }
