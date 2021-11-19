@@ -97,32 +97,28 @@ function generateCode(code) {
         
         // End recursion
         // Passes the 4-digit code into the verifyRoomCode function
-        verifyCode.then(function(value) {
-            console.log(value);
-        });
+        verifyCode(code);
     }
 }
 
-let verifyCode = new Promise(function(myResolve, myReject) {
-     // Checks that specific location in the database and takes a snapshot
+// Function to check if the room key passed into it (key) is already an in-session game in the database
+function verifyCode(code) {
+    
+    // Checks that specific location in the database and takes a snapshot
     firebase.database().ref('families/' + code).once("value", snapshot => {
 
         // If the snapshot exists already
         if (snapshot.exists()) {
             
             // Rerun the code generator and try again
-            myResolve("Exists");
+            generateCode('');
             
         // If the snapshot doesn't exist, we can set up the family
         } else {
-            myReject("Does not exist");
+            return code;
         }
     });
-});
-
-verifyCode.then(function(value) {
-    console.log(value);
-});
+}
 
 /* DOM-User Interactions */
 
