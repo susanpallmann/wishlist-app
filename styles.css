@@ -187,6 +187,11 @@ div[bg-color="red"] input[type="text"], div[bg-color="red"] input[type="password
   color: var(--dark-green);
 }
 
+div[bg-color="white"] input[disabled=""] {
+  background-color: var(--alert-light-green);
+  color: var(--alert-green);
+}
+
 /* Buttons */
 .small-button {
   display: flex;
