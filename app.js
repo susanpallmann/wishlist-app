@@ -263,10 +263,6 @@ $(document).on('click', '#create-family', function() {
     return false;
 });
 
-
-
-createFamily(code);
-
 $(document).ready(function () {
 
     // Tracker to handle whether or not a user is currently logged in, updates UI accordingly
