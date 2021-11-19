@@ -306,8 +306,8 @@ $(document).ready(function () {
                 break;
             case "family-view":
                 let code = $(this).attr('code');
-                let location = firebase.database().ref('users/' + globalUser.uid + '/activeFamily');
-                location.update(code);
+                let location = firebase.database().ref('users/' + globalUser.uid);
+                location.update({activeFamily: code});
                 // update activeFamily
                 // load info for next page
                 break;
