@@ -125,12 +125,17 @@ function verifyCode(code) {
 function createFamily(familyName, event, code) {
     let user = firebase.auth().currentUser;
     if (user) {
-        let location = firebase.database().ref('users/' + user.uid + '/families/' + code);
         let displayName = user.displayName
+        let codeValues = {};
+        codeValues[code] = {
+            displayName: displayName
+        };
+        let location = firebase.database().ref('users/' + user.uid);
         location.set({
             displayName: displayName,
-            activeFamily: code
-            }, (error) => {
+            activeFamily: code,
+            families: codeValues
+        }, (error) => {
                 if (error) {
                     
                     // Write failed
