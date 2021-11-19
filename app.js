@@ -206,7 +206,7 @@ function loadFamiliesList() {
                         if (family == activeFamily) {
                             extraClass = 'selected';
                         }
-                        $('#loaded-family-list').prepend(`
+                        $('#loaded-family-list').append(`
                             <div class="list-item state-change ${extraClass}" color="faint-blue" destination="family-view" code="${family}">
                                 <div class="left">
                                     <i class="material-icons-round">people</i>
@@ -221,7 +221,7 @@ function loadFamiliesList() {
                     });
                 }
             } else {
-                $('#loaded-family-list').prepend(`
+                $('#loaded-family-list').append(`
                     <div class="alert info">
                       <i class="material-icons-round">info</i>
                       <p>You have not joined any families yet! Families you join will appear in this list.</p>
@@ -246,7 +246,7 @@ function populateFamilyView(code) {
             
             for (let familyMember in familyMembers) {
                 let memberName = familyMembers[familyMember]['displayName']
-                $('#loaded-family-members').prepend(`
+                $('#loaded-family-members').append(`
                     <div class="list-item" color="white" name="${memberName}">
                         <div class="left">
                             <i class="material-icons-round">person</i>
