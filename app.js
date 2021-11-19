@@ -96,13 +96,13 @@ function generateCode(code) {
     } else {
         
         // End recursion
-        // Passes the 4-digit code into the verifyRoomCode function
-        console.log(verifyCode(code, function(code) { return code;}));
+        // Passes the 4-digit code into the verifyCode function
+        verifyCode(code);
     }
 }
 
 // Function to check if the room key passed into it (key) is already an in-session game in the database
-function verifyCode(code, callback) {
+function verifyCode(code) {
     
     // Checks that specific location in the database and takes a snapshot
     firebase.database().ref('families/' + code).once("value", snapshot => {
@@ -115,7 +115,7 @@ function verifyCode(code, callback) {
             
         // If the snapshot doesn't exist, we can set up the family
         } else {
-            return callback(code);
+            $('#create-family-code').val(code);
         }
     });
 }
@@ -182,11 +182,8 @@ $(document).on('click', '#signup', function() {
 $(document).on('click', '#initialize-create-family', function() {
 
     // Call function generateCode to generate code for form
-    let code = generateCode('');
-    console.log(code);
+    generateCode('');
     
-    $('#create-family-code').val(code);
-
     // Prevent default click behavior
     event.preventDefault();
     return false;
