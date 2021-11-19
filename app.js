@@ -192,6 +192,7 @@ function createFamily(familyName, event, code) {
 /* Load Families on My Families View */
 function loadFamiliesList() {
     if (globalUser) {
+        console.log(true);
         let location = firebase.database().ref('users/' + globalUser.uid);
         location.once('value', function(snapshot) {
             $('#loaded-family-list').empty();
