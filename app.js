@@ -306,7 +306,7 @@ $(document).ready(function () {
                 break;
             case "family-view":
                 let code = $(this).attr('code');
-                let location = firebase.database().ref('users/' + globalUser + '/activeFamily');
+                let location = firebase.database().ref('users/' + globalUser.uid + '/activeFamily');
                 location.update(code);
                 // update activeFamily
                 // load info for next page
@@ -325,6 +325,13 @@ firebase.auth().onAuthStateChanged((user) => {
         // User object (not currently needed for anything)
         let uid = user.uid;
         globalUser = user;
+        firebase.database().ref('users/' + globalUser.uid + '/activeFamily').on("value", snapshot => {
+            if (snapshot.val()) {
+                globalActiveFamily = snapshot.val();
+            } else {
+                globalActiveFamily = null;
+            }
+        });
 
     } else {
 
@@ -334,13 +341,5 @@ firebase.auth().onAuthStateChanged((user) => {
     console.log(globalUser);
     if ($('#my-families').is(":visible")) {
         loadFamiliesList();
-    }
-});
-
-firebase.database().ref('users/' + globalUser.uid + '/activeFamily').on("value", snapshot => {
-    if (snapshot.val()) {
-        globalActiveFamily = snapshot.val();
-    } else {
-        globalActiveFamily = null;
     }
 });
