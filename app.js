@@ -238,13 +238,13 @@ function populateFamilyView(code) {
     location.once("value", snapshot => {
         if (snapshot.val()) {
             let familyRecord = snapshot.val();
-            let familyName = familyRecord.familyName;
+            let familyName = familyRecord.familyName.val();
             let activeEvent =  familyRecord.activeEvent;
             let familyCode = code;
             let familyMembers = familyRecord.members;
             for (let familyMember in familyMembers) {
                 console.log(familyMember);
-                let memberName = familyMember.displayName;
+                let memberName = familyMember.displayName.val();
                 $('#loaded-family-members').prepend(`
                     <div class="list-item" color="white" name="${memberName}">
                         <div class="left">
