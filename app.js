@@ -312,7 +312,7 @@ $(document).ready(function () {
                 generateCode('');
                 break;
             case "my-families":
-                let user = user = firebase.auth().currentUser;
+                let user = firebase.auth().currentUser;
                 loadFamiliesList(user);
                 break;
             default:
