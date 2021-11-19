@@ -131,7 +131,7 @@ function createFamily(familyName, event, code) {
             displayName: displayName
         };
         let location = firebase.database().ref('users/' + user.uid);
-        location.set({
+        location.update({
             displayName: displayName,
             activeFamily: code,
             families: codeValues
