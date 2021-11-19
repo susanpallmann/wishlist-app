@@ -240,6 +240,7 @@ function populateFamilyView(code) {
             let familyRecord = snapshot.val();
             let familyName = familyRecord.familyName;
             let activeEvent =  familyRecord.activeEvent;
+            console.log(activeEvent);
             let familyCode = code;
             let familyMembers = familyRecord.members;
             /*
