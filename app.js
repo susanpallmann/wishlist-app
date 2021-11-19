@@ -140,7 +140,8 @@ function createFamily(familyName, event, code) {
                     console.log('success');
                     let values = {};
                     values[user.uid] = {
-                        displayName : displayName
+                        displayName : displayName,
+                        activeFamily : code
                     };
                     
                     let familyLocation = firebase.database().ref('families/' + code);
