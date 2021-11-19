@@ -238,7 +238,7 @@ function populateFamilyView(code) {
     location.once("value", snapshot => {
         if (snapshot.val()) {
             let familyRecord = snapshot.val();
-            let familyName = familyRecord.familyName.val();
+            let familyName = familyRecord.familyName;
             let activeEvent =  familyRecord.activeEvent;
             let familyCode = code;
             let familyMembers = familyRecord.members;
