@@ -258,8 +258,8 @@ function populateFamilyView(code) {
                     </div>
                 `);
             }*/
-            $('#family-view').find('h1').text(familyName);
-            $('#family-view').find('h2').text(activeEvent);
+            $('div[state="family-view]').find('h1').text(familyName);
+            $('div[state="family-view]').find('h2').text(activeEvent);
         }
     });
 }
