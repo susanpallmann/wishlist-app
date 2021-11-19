@@ -175,6 +175,14 @@
               <span class="round-button state-change" destination="my-families"><i class="material-icons-round">navigate_before</i><p>Cancel</p></span>
               <h1>Create Family</h1>
               <div class="form-container flex-vertical">
+                <form id="create-family-form">
+                  <label for="create-family-name">Family Name</label>
+                  <input type="text" name="create-family-name" id="create-family-name" placeholder="Name your family">
+                  <label for="create-family-event">Event</label>
+                  <input type="text" name="create-family-event" id="create-family-event" placeholder="e.g. Christmas 2021">
+                  <label for="create-family-code">Generated Family Code</label>
+                  <input type="text" name="create-family-code" id="create-family-code" disabled>
+                </form>
               </div>
               <div class="buttons-container flex-vertical">
                 <span class="small-button light-red state-change" id="create-family" destination="my-families"><p>Create</p></span>
