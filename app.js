@@ -338,7 +338,7 @@ $(document).ready(function () {
                 let code = $(this).attr('code');
                 let location = firebase.database().ref('users/' + globalUser.uid);
                 location.update({activeFamily: code});
-                // load info for next page
+                populateFamilyView(code);
                 break;
             default:
                 break;
