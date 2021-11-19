@@ -185,10 +185,14 @@ function createFamily(familyName, event, code) {
 /* Load Families on My Families View */
 function loadFamiliesList() {
     const user = firebase.auth().currentUser;
-    let location = firebase.database().ref('users/' + user.uid + '/families/');
+    let location = firebase.database().ref('users/' + user.uid);
     location.on('value', function(snapshot) {
         $('#loaded-family-list').empty();
-        let families = snapshot.val();
+        let data = snapshot.val();
+        let activeFamily = data.activeFamily;
+        console.log(activeFamily);
+        let families = data.families.val();
+        
         if (families) {
             for (let family in families) {
                 let familyLocation = firebase.database().ref('families/' + family);
