@@ -186,47 +186,49 @@ function createFamily(familyName, event, code) {
 
 /* Load Families on My Families View */
 function loadFamiliesList() {
-    let location = firebase.database().ref('users/' + globalUser.uid);
-    location.once('value', function(snapshot) {
-        $('#loaded-family-list').empty();
-        let data = snapshot.val();
-        let activeFamily = data.activeFamily;
-        console.log(activeFamily);
-        let families = data.families;
-        
-        if (families) {
-            for (let family in families) {
-                let familyLocation = firebase.database().ref('families/' + family);
-                familyLocation.once('value', function(snapshot) {
-                    let familyInfo = snapshot.val();
-                    let familyName = familyInfo.familyName;
-                    let extraClass = '';
-                    if (family == activeFamily) {
-                        extraClass = 'selected';
-                    }
-                    $('#loaded-family-list').prepend(`
-                        <div class="list-item state-change ${extraClass}" color="faint-blue" destination="family-view" family-name="${familyName}">
-                            <div class="left">
-                                <i class="material-icons-round">people</i>
-                                <p class="family-name">${familyName}</p>
-                                <p class="family-code">${family}</p>
+    if (globalUser) {
+        let location = firebase.database().ref('users/' + globalUser.uid);
+        location.once('value', function(snapshot) {
+            $('#loaded-family-list').empty();
+            let data = snapshot.val();
+            let activeFamily = data.activeFamily;
+            console.log(activeFamily);
+            let families = data.families;
+
+            if (families) {
+                for (let family in families) {
+                    let familyLocation = firebase.database().ref('families/' + family);
+                    familyLocation.once('value', function(snapshot) {
+                        let familyInfo = snapshot.val();
+                        let familyName = familyInfo.familyName;
+                        let extraClass = '';
+                        if (family == activeFamily) {
+                            extraClass = 'selected';
+                        }
+                        $('#loaded-family-list').prepend(`
+                            <div class="list-item state-change ${extraClass}" color="faint-blue" destination="family-view" family-name="${familyName}">
+                                <div class="left">
+                                    <i class="material-icons-round">people</i>
+                                    <p class="family-name">${familyName}</p>
+                                    <p class="family-code">${family}</p>
+                                </div>
+                                <div class="right">
+                                    <i class="material-icons-round">navigate_next</i>
+                                </div>
                             </div>
-                            <div class="right">
-                                <i class="material-icons-round">navigate_next</i>
-                            </div>
-                        </div>
-                        `);
-                });
+                            `);
+                    });
+                }
+            } else {
+                $('#loaded-family-list').prepend(`
+                    <div class="alert info">
+                      <i class="material-icons-round">info</i>
+                      <p>You have not joined any families yet! Families you join will appear in this list.</p>
+                    </div>
+                `);
             }
-        } else {
-            $('#loaded-family-list').prepend(`
-                <div class="alert info">
-                  <i class="material-icons-round">info</i>
-                  <p>You have not joined any families yet! Families you join will appear in this list.</p>
-                </div>
-            `);
-        }
-    });
+        });
+    }
 }
 
 /* DOM-User Interactions */
