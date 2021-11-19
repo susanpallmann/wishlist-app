@@ -125,19 +125,37 @@ function verifyCode(code) {
 
 function createFamily(code) {
     let user = firebase.auth().currentUser;
-    let location = firebase.database().ref('users/' + user.uid + '/families/' + code);
-    let displayName = user.displayName
-    location.set({
-        displayName: displayName
-        }, (error) => {
-            if (error) {
-                // Write failed
-                console.log(error);
-            } else {
-                // Data saved succcessfully
-                console.log('success');
-            }
-    })
+    if (user) {
+        let location = firebase.database().ref('users/' + user.uid + '/families/' + code);
+        let displayName = user.displayName
+        location.set({
+            displayName: displayName
+            }, (error) => {
+                if (error) {
+                    
+                    // Write failed
+                    console.log(error);
+                } else {
+                    
+                    // Data saved succcessfully
+                    console.log('success');
+                    let familyLocation = firebase.database().ref('families/' + code + '/members/' + displayName);
+                    familyLocation.set({
+                        displayName : displayName
+                    }, (error) => {
+                        if (error) {
+                            
+                            // Write failed
+                            console.log(error2);
+                        } else {
+                            
+                            // Data saved succcessfully
+                            console.log('success2');
+                        }
+                    })
+                }
+        })
+    }
 }
 
 /* DOM-User Interactions */
