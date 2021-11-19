@@ -207,7 +207,7 @@ function loadFamiliesList() {
                             extraClass = 'selected';
                         }
                         $('#loaded-family-list').prepend(`
-                            <div class="list-item state-change ${extraClass}" color="faint-blue" destination="family-view" family-name="${familyName}">
+                            <div class="list-item state-change ${extraClass}" color="faint-blue" destination="family-view" code="${code}">
                                 <div class="left">
                                     <i class="material-icons-round">people</i>
                                     <p class="family-name">${familyName}</p>
@@ -305,7 +305,9 @@ $(document).ready(function () {
                 loadFamiliesList();
                 break;
             case "family-view":
-                let name = $(this).attr('name');
+                let code = $(this).attr('code');
+                let location = firebase.database().ref('users/' + globalUser + '/activeFamily');
+                location.update(code);
                 // update activeFamily
                 // load info for next page
                 break;
