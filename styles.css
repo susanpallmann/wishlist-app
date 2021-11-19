@@ -104,6 +104,14 @@ h2, h3, h4, p, label {
   width: 100%;
 }
 
+#loaded-family-members {
+  display: flex;
+  flex-direction: ;
+  flex-direction: column;
+  row-gap: 16px;
+  width: 100%;
+}
+
 .flex-container.flex-vertical.no-upper-button {
   padding-top: 130px;
 }
@@ -131,6 +139,7 @@ h2, h3, h4, p, label {
 
 .list-item[color="white"] {
   background-color: var(--white);
+  color: var(--dark-green);
 }
 
 .list-item[color="white"]:hover, .list-item[color="white"]:active, .list-item[color="white"]:focus {
