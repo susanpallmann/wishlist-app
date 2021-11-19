@@ -190,9 +190,9 @@ function loadFamiliesList() {
     const user = firebase.auth().currentUser;
     let location = firebase.database().ref('users/' + user.uid + '/families/');
     location.once('value', function(snapshot) {
+        $('#loaded-family-list').empty();
         let families = snapshot.val();
         if (families) {
-            $('#loaded-family-list').empty();
             for (let family in families) {
                 console.log(family);
                 let familyLocation = firebase.database().ref('families/' + family);
