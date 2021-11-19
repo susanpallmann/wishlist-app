@@ -193,7 +193,6 @@ function loadFamiliesList() {
             $('#loaded-family-list').empty();
             let data = snapshot.val();
             let activeFamily = data.activeFamily;
-            console.log(activeFamily);
             let families = data.families;
 
             if (families) {
@@ -338,7 +337,6 @@ firebase.auth().onAuthStateChanged((user) => {
         // User is signed out
         globalUser = null;
     }
-    console.log(globalUser);
     if ($('#my-families').is(":visible")) {
         loadFamiliesList();
     }
