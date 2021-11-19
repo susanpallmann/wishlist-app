@@ -126,7 +126,7 @@ function verifyCode(code) {
 function createFamily(code) {
     let user = firebase.auth().currentUser;
     let location = firebase.database().ref('users/' + user.uid + '/families/' + code);
-    let displayName = uid.displayName
+    let displayName = user.displayName
     location.set({
         displayName: displayName
         }, (error) => {
