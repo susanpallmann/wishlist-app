@@ -288,23 +288,6 @@ $(document).on('click', '#create-family', function() {
 
 $(document).ready(function () {
 
-    // Tracker to handle whether or not a user is currently logged in, updates UI accordingly
-    firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-            
-            // User is signed in
-            // User object (not currently needed for anything)
-            let uid = user.uid;
-            globalUser = user;
-            
-        } else {
-            
-            // User is signed out
-            globalUser = null;
-        }
-    });
-    
-    
     // "Router" function for buttons that change the app's UX state
     $('#app').on('click', '.state-change', function(event) {
 
@@ -322,4 +305,20 @@ $(document).ready(function () {
                 break;
         }
     });
+});
+
+// Tracker to handle whether or not a user is currently logged in, updates UI accordingly
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+
+        // User is signed in
+        // User object (not currently needed for anything)
+        let uid = user.uid;
+        globalUser = user;
+
+    } else {
+
+        // User is signed out
+        globalUser = null;
+    }
 });
