@@ -183,8 +183,7 @@ function createFamily(familyName, event, code) {
 }
 
 /* Load Families on My Families View */
-function loadFamiliesList() {
-    const user = firebase.auth().currentUser;
+function loadFamiliesList(user) {
     let location = firebase.database().ref('users/' + user.uid);
     location.once('value', function(snapshot) {
         $('#loaded-family-list').empty();
@@ -313,7 +312,8 @@ $(document).ready(function () {
                 generateCode('');
                 break;
             case "my-families":
-                loadFamiliesList();
+                let user = user = firebase.auth().currentUser;
+                loadFamiliesList(user);
                 break;
             default:
                 break;
