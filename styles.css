@@ -30,6 +30,7 @@ body {
 /* Flexbox Styles */
 .flex-container {
   display: flex;
+  padding-top: 20px;
 }
 
 .form-container.flex-vertical {
@@ -45,7 +46,6 @@ body {
 .flex-vertical {
   flex-direction: column;
   row-gap: 56px;
-  padding-top: 20px;
   box-sizing: border-box;
   align-items: center;
 }
@@ -66,6 +66,12 @@ body {
 .buttons-container.flex-vertical {
   flex-direction: column;
   row-gap: 16px;
+}
+
+.titles-container.flex-vertical {
+  flex-direction: column;
+  row-gap: 0px;
+  width: 100%;
 }
 
 .state {
