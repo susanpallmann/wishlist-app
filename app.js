@@ -303,7 +303,7 @@ $(document).ready(function () {
     
     
     // "Router" function for buttons that change the app's UX state
-    $('.state-change').click(function(event) {
+    $('#app').on('click', '.state-change', function(event) {
 
         // Gets destination from button's "destination" attribute
         let destination = $(this).attr('destination');
