@@ -129,12 +129,13 @@ function createFamily(code) {
     let displayName = uid.displayName
     location.set({
         displayName: displayName
-    }, (error) => {
-        // Write failed
-        console.log(error);
-    } else {
-        // Data saved succcessfully
-        console.log('success');
+        }, (error) => {
+            // Write failed
+            console.log(error);
+        } else {
+            // Data saved succcessfully
+            console.log('success');
+        }
     })
 }
 
