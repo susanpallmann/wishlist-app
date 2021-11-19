@@ -97,7 +97,7 @@ function generateCode(code) {
         
         // End recursion
         // Passes the 4-digit code into the verifyRoomCode function
-        verifyCode(code, return function(code) {return code});
+        verifyCode(code, function(code) { console.log(code)});
     }
 }
 
