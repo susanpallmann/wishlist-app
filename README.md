@@ -26,8 +26,9 @@ Notes:
 *This sprint overlaps with Thanksgiving, bandwidth for dev projects will be reduced.*
 
 Features:
-- [ ] [1.1.X](https://github.com/susanpallmann/wishlist-app/issues/13)  - *Complete*
+- [X] [1.1.X](https://github.com/susanpallmann/wishlist-app/issues/13)  - *Complete*
 - [ ] [1.2](https://github.com/susanpallmann/wishlist-app/issues/2)  - *Started*
+- [ ] [1.3](https://github.com/susanpallmann/wishlist-app/issues/3)  - *Started*
 
 End of Sprint:
 - [ ] Comment
