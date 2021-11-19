@@ -324,7 +324,7 @@ firebase.auth().onAuthStateChanged((user) => {
         globalUser = null;
     }
     console.log(globalUser);
-    if ($('#my-families:visible')) {
+    if ($('#my-families').is(":visible")) {
         loadFamiliesList();
     }
 });
