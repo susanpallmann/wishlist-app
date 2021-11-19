@@ -206,10 +206,6 @@ $(document).on('click', '#signout', function() {
 
     // Call function signOut to handle authentication sign out
     signOut();
-
-    // Prevent default click behavior
-    event.preventDefault();
-    return false;
 });
 
 
@@ -218,10 +214,6 @@ $(document).on('click', '#login', function() {
 
     // Call function logIn to handle authentication log in
     logIn($('#login-email').val(), $('#login-password').val());
-
-    // Prevent default click behavior
-    event.preventDefault();
-    return false;
 });
 
 
@@ -230,10 +222,6 @@ $(document).on('click', '#signup', function() {
 
     // Call function logIn to handle authentication log in
     signUp($('#signup-display-name').val(), $('#signup-email').val(), $('#signup-password').val());
-
-    // Prevent default click behavior
-    event.preventDefault();
-    return false;
 });
 
 // If an element with ID "initialize-create-family" is clicked
@@ -241,10 +229,6 @@ $(document).on('click', '#initialize-create-family', function() {
 
     // Call function generateCode to generate code for form
     generateCode('');
-    
-    // Prevent default click behavior
-    event.preventDefault();
-    return false;
 });
 
 // If an element with ID "create-family" is clicked
@@ -257,10 +241,6 @@ $(document).on('click', '#create-family', function() {
     
     // Call function generateCode to generate code for form
     createFamily(familyName, event, code);
-    
-    // Prevent default click behavior
-    event.preventDefault();
-    return false;
 });
 
 $(document).ready(function () {
