@@ -165,6 +165,7 @@ function createFamily(familyName, event, code) {
                     
                     let familyLocation = firebase.database().ref('families/' + code);
                     familyLocation.set({
+                        activeEvent: event,
                         familyName: familyName,
                         members: values
                     }, (error) => {
@@ -216,7 +217,7 @@ function loadFamiliesList() {
                                     <i class="material-icons-round">navigate_next</i>
                                 </div>
                             </div>
-                            `);
+                        `);
                     });
                 }
             } else {
@@ -229,6 +230,36 @@ function loadFamiliesList() {
             }
         });
     }
+}
+
+/Load Family info on Family View */
+function populateFamilyView(code) {
+    let location = firebase.database().ref('families/' + code);
+    location.on("value", snapshot => {
+        if (snapshot.val()) {
+            let familyRecord = snapshot.val();
+            let familyName = familyRecord.familyName;
+            let activeEvent =  familyRecord.activeEvent;
+            let familyCode = code;
+            let familyMembers = familyRecord.members;
+            for (let familyMember in familyMembers) {
+                let memberName = familyMember.displayName;
+                $('#loaded-family-members').prepend(`
+                    <div class="list-item" color="white" name="${memberName}">
+                        <div class="left">
+                            <i class="material-icons-round">person</i>
+                            <p class="member-name">${familyName}</p>
+                        </div>
+                        <div class="right">
+                            <i class="material-icons-round">navigate_next</i>
+                        </div>
+                    </div>
+                `);
+            }
+            $('#family-view').find('h1').text(familyName);
+            $('#family-view').find('h2').text(familyName);
+        }
+    });
 }
 
 /* DOM-User Interactions */
@@ -307,7 +338,6 @@ $(document).ready(function () {
                 let code = $(this).attr('code');
                 let location = firebase.database().ref('users/' + globalUser.uid);
                 location.update({activeFamily: code});
-                // update activeFamily
                 // load info for next page
                 break;
             default:
