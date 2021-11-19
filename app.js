@@ -229,14 +229,14 @@ $(document).on('click', '#signup', function() {
     // Call function logIn to handle authentication log in
     signUp($('#signup-display-name').val(), $('#signup-email').val(), $('#signup-password').val());
 });
-
+/*
 // If an element with ID "initialize-create-family" is clicked
 $(document).on('click', '#initialize-create-family', function() {
 
     // Call function generateCode to generate code for form
     generateCode('');
 });
-
+*/
 // If an element with ID "create-family" is clicked
 // TODO, empty form validation
 $(document).on('click', '#create-family', function() {
@@ -272,5 +272,12 @@ $(document).ready(function () {
         // Gets destination from button's "destination" attribute
         let destination = $(this).attr('destination');
         changeState(destination);
+        switch(destination) {
+            case "create-family":
+                    generateCode('');
+                break;
+            default:
+                break;
+        }
     });
 });
