@@ -97,12 +97,12 @@ function generateCode(code) {
         
         // End recursion
         // Passes the 4-digit code into the verifyRoomCode function
-        verifyCode(code);
+        verifyCode(code, function(code) {return code});
     }
 }
 
 // Function to check if the room key passed into it (key) is already an in-session game in the database
-function verifyCode(code) {
+function verifyCode(code, callback) {
     
     // Checks that specific location in the database and takes a snapshot
     firebase.database().ref('families/' + code).once("value", snapshot => {
@@ -115,7 +115,7 @@ function verifyCode(code) {
             
         // If the snapshot doesn't exist, we can set up the family
         } else {
-            return code;
+            callback(code);
         }
     });
 }
