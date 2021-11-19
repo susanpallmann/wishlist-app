@@ -237,6 +237,7 @@ function populateFamilyView(code) {
     let location = firebase.database().ref('families/' + code);
     location.once("value", snapshot => {
         if (snapshot.val()) {
+            $('#loaded-family-members').empty();
             let familyRecord = snapshot.val();
             let familyName = familyRecord.familyName;
             let activeEvent =  familyRecord.activeEvent;
