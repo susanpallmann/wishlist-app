@@ -198,7 +198,7 @@ function loadFamiliesList() {
                 familyLocation.once('value', function(snapshot) {
                     let familyInfo = snapshot.val();
                     let familyName = familyInfo.familyName;
-                    $('#loaded-family-list').preppend(`
+                    $('#loaded-family-list').prepend(`
                         <div class="list-item" color="faint-blue">
                             <div class="left">
                                 <i class="material-icons-round">people</i>
@@ -213,7 +213,7 @@ function loadFamiliesList() {
                 });
             }
         } else {
-            $('#loaded-family-list').preppend(`
+            $('#loaded-family-list').prepend(`
                 <div class="alert info">
                   <i class="material-icons-round">info</i>
                   <p>You have not joined any families yet! Families you join will appear in this list.</p>
