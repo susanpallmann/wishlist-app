@@ -368,13 +368,13 @@ firebase.auth().onAuthStateChanged((user) => {
                 globalActiveFamily = null;
             }
         });
+        if ($('#my-families').is(":visible")) {
+            loadFamiliesList();
+        }
 
     } else {
 
         // User is signed out
         globalUser = null;
-    }
-    if ($('#my-families').is(":visible")) {
-        loadFamiliesList();
     }
 });
