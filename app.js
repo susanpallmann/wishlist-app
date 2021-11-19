@@ -204,7 +204,7 @@ function loadFamiliesList() {
                         extraClass = 'selected';
                     }
                     $('#loaded-family-list').prepend(`
-                        <div class="list-item state-change ${extaClass}" color="faint-blue" destination="family-view" family-name="${familyName}">
+                        <div class="list-item state-change ${extraClass}" color="faint-blue" destination="family-view" family-name="${familyName}">
                             <div class="left">
                                 <i class="material-icons-round">people</i>
                                 <p class="family-name">${familyName}</p>
