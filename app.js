@@ -133,8 +133,7 @@ function createFamily(familyName, event, code) {
         let location = firebase.database().ref('users/' + user.uid);
         location.update({
             displayName: displayName,
-            activeFamily: code,
-            families: codeValues
+            activeFamily: code
         }, (error) => {
                 if (error) {
                     
@@ -144,7 +143,21 @@ function createFamily(familyName, event, code) {
                     
                     // Data saved succcessfully
                     console.log('success');
-                    let values = {};
+                    
+                    let userFamilyLocation = firebase.database().ref('users/' + user.uid + '/families/' + code);
+                    userFamilyLocation.set({
+                        displayName: displayName
+                    },(error) => {
+                        if (error) {
+                            
+                            // Write failed
+                            console.log(error);
+                        } else {
+                            
+                            // Data saved succcessfully
+                            console.log('success2');
+                            
+                            let values = {};
                     values[user.uid] = {
                         displayName : displayName
                     };
@@ -157,28 +170,15 @@ function createFamily(familyName, event, code) {
                         if (error) {
                             
                             // Write failed
-                            console.log(error2);
+                            console.log(error);
                         } else {
                             
                             // Data saved succcessfully
-                            console.log('success2');
+                            console.log('success3');
                         }
                     })
-                    /*
-                    let familyLocation = firebase.database().ref('families/' + code + '/members/' + user.uid);
-                    familyLocation.set({
-                        displayName : displayName
-                    }, (error) => {
-                        if (error) {
-                            
-                            // Write failed
-                            console.log(error2);
-                        } else {
-                            
-                            // Data saved succcessfully
-                            console.log('success2');
                         }
-                    })*/
+                    })
                 }
         })
     }
