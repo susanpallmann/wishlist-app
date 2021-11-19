@@ -321,4 +321,5 @@ firebase.auth().onAuthStateChanged((user) => {
         // User is signed out
         globalUser = null;
     }
+    console.log(globalUser);
 });
