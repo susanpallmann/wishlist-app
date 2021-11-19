@@ -184,6 +184,18 @@ function createFamily(familyName, event, code) {
     }
 }
 
+/* Load Families on My Families View */
+function loadFamiliesList() {
+    let location = firebase.database().ref('users/' + user.uid + '/families/');
+    location.once('value', function(snapshot) {
+        let families = snapshot.val();
+        for (let family in families) {
+            console.log(family);
+            //let familyLocation = firebase.database().ref('families/' + family);
+        }
+    });
+}
+
 /* DOM-User Interactions */
 
 // Shows destination state and hides other states
@@ -229,14 +241,7 @@ $(document).on('click', '#signup', function() {
     // Call function logIn to handle authentication log in
     signUp($('#signup-display-name').val(), $('#signup-email').val(), $('#signup-password').val());
 });
-/*
-// If an element with ID "initialize-create-family" is clicked
-$(document).on('click', '#initialize-create-family', function() {
 
-    // Call function generateCode to generate code for form
-    generateCode('');
-});
-*/
 // If an element with ID "create-family" is clicked
 // TODO, empty form validation
 $(document).on('click', '#create-family', function() {
@@ -274,7 +279,10 @@ $(document).ready(function () {
         changeState(destination);
         switch(destination) {
             case "create-family":
-                    generateCode('');
+                generateCode('');
+                break;
+            case "my-families":
+                loadFamiliesList();
                 break;
             default:
                 break;
