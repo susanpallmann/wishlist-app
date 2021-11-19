@@ -200,7 +200,7 @@ function loadFamiliesList() {
                     let familyInfo = snapshot.val();
                     let familyName = familyInfo.familyName;
                     $('#loaded-family-list').prepend(`
-                        <div class="list-item" color="faint-blue">
+                        <div class="list-item state-change" color="faint-blue" destination="family-view" family-name="${familyName}">
                             <div class="left">
                                 <i class="material-icons-round">people</i>
                                 <p class="family-name">${familyName}</p>
