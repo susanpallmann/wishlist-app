@@ -152,6 +152,16 @@ h2, h3, h4, p, label {
   opacity: 0.5;
 }
 
+.list-item[color="faint-blue"].selected {
+  background-color: var(--light-red);
+  color: #fff;
+}
+
+.list-item[color="faint-blue"].selected:hover, .list-item[color="faint-blue"].selected:active, .list-item[color="faint-blue"].selected:focus {
+background-color: var(--medium-red);
+color: #fff;
+}
+
 /* Alerts */
 .alert {
   display: flex;
