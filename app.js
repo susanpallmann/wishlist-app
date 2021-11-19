@@ -191,7 +191,7 @@ function loadFamiliesList() {
         let data = snapshot.val();
         let activeFamily = data.activeFamily;
         console.log(activeFamily);
-        let families = data.families.val();
+        let families = data.families;
         
         if (families) {
             for (let family in families) {
