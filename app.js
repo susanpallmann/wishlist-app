@@ -194,7 +194,7 @@ function loadFamiliesList() {
     if (globalUser) {
         console.log(true);
         let location = firebase.database().ref('users/' + globalUser.uid);
-        location.once('value', function(snapshot) {
+        location.on('value', function(snapshot) {
             $('#loaded-family-list').empty();
             let data = snapshot.val();
             let activeFamily;
@@ -358,8 +358,6 @@ firebase.auth().onAuthStateChanged((user) => {
     if (user) {
 
         // User is signed in
-        // User object (not currently needed for anything)
-        let uid = user.uid;
         globalUser = user;
         firebase.database().ref('users/' + globalUser.uid + '/activeFamily').on("value", snapshot => {
             if (snapshot.val()) {
@@ -368,13 +366,13 @@ firebase.auth().onAuthStateChanged((user) => {
                 globalActiveFamily = null;
             }
         });
-        if ($('#my-families').is(":visible")) {
-            loadFamiliesList();
-        }
 
     } else {
 
         // User is signed out
         globalUser = null;
+    }
+    if ($('#my-families').is(":visible")) {
+        loadFamiliesList();
     }
 });
