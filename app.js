@@ -139,7 +139,7 @@ function createFamily(code) {
                     
                     // Data saved succcessfully
                     console.log('success');
-                    let familyLocation = firebase.database().ref('families/' + code + '/members/' + displayName);
+                    let familyLocation = firebase.database().ref('families/' + code + '/members/' + user.uid);
                     familyLocation.set({
                         displayName : displayName
                     }, (error) => {
