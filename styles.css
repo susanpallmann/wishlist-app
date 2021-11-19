@@ -85,6 +85,14 @@ h1 {
   font-weight: 700;
 }
 
+h2 {
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 h2, h3, h4, p, label {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
