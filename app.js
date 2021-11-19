@@ -190,9 +190,35 @@ function loadFamiliesList() {
     let location = firebase.database().ref('users/' + user.uid + '/families/');
     location.once('value', function(snapshot) {
         let families = snapshot.val();
-        for (let family in families) {
-            console.log(family);
-            //let familyLocation = firebase.database().ref('families/' + family);
+        if (families) {
+            $('#loaded-family-list .list-item').remove();
+            for (let family in families) {
+                console.log(family);
+                let familyLocation = firebase.database().ref('families/' + family);
+                familyLocation.once('value', function(snapshot) {
+                    let familyInfo = snapshot.val();
+                    let familyName = familyInfo.familyName;
+                    $('#loaded-family-list').preppend(`
+                        <div class="list-item" color="faint-blue">
+                            <div class="left">
+                                <i class="material-icons-round">people</i>
+                                <p class="family-name">${familyName}</p>
+                                <p class="family-code">${family}</p>
+                            </div>
+                            <div class="right">
+                                <i class="material-icons-round">navigate_next</i>
+                            </div>
+                        </div>
+                        `);
+                });
+            }
+        } else {
+            $('#loaded-family-list').preppend(`
+                <div class="alert info">
+                  <i class="material-icons-round">info</i>
+                  <p>You have not joined any families yet! Families you join will appear in this list.</p>
+                </div>
+            `);
         }
     });
 }
