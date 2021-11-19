@@ -244,9 +244,7 @@ function populateFamilyView(code) {
             let familyMembers = familyRecord.members;
             
             for (let familyMember in familyMembers) {
-                console.log(familyMember);
-                console.log(familyMembers[familyMember]['displayName']);
-                let memberName = familyMember.displayName;
+                let memberName = familyMembers[familyMember]['displayName']
                 $('#loaded-family-members').prepend(`
                     <div class="list-item" color="white" name="${memberName}">
                         <div class="left">
