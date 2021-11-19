@@ -116,14 +116,13 @@ function verifyCode(code) {
         // If the snapshot doesn't exist, we can set up the family
         } else {
             $('#create-family-code').val(code);
-            createFamily(code);
         }
     });
 }
 
 /* Create/Initialize Family & Founding User */
 
-function createFamily(code) {
+function createFamily(familyName, event, code); {
     let user = firebase.auth().currentUser;
     if (user) {
         let location = firebase.database().ref('users/' + user.uid + '/families/' + code);
@@ -139,6 +138,28 @@ function createFamily(code) {
                     
                     // Data saved succcessfully
                     console.log('success');
+                    let values = {};
+                    values[user.uid] = {
+                        displayName : displayName
+                    };
+                    
+                    let familyLocation = firebase.database().ref('families/' + code);
+                    familyLocation.set({
+                        familyName: familyName,
+                        members: values
+                        }
+                    }, (error) => {
+                        if (error) {
+                            
+                            // Write failed
+                            console.log(error2);
+                        } else {
+                            
+                            // Data saved succcessfully
+                            console.log('success2');
+                        }
+                    })
+                    /*
                     let familyLocation = firebase.database().ref('families/' + code + '/members/' + user.uid);
                     familyLocation.set({
                         displayName : displayName
@@ -152,7 +173,7 @@ function createFamily(code) {
                             // Data saved succcessfully
                             console.log('success2');
                         }
-                    })
+                    })*/
                 }
         })
     }
@@ -226,6 +247,26 @@ $(document).on('click', '#initialize-create-family', function() {
     event.preventDefault();
     return false;
 });
+
+// If an element with ID "create-family" is clicked
+// TODO, empty form validation
+$(document).on('click', '#create-family', function() {
+
+    let familyName = $('#create-family-name').val();
+    let event = $('#create-family-event').val();
+    let code = $('#create-family-code').val();
+    
+    // Call function generateCode to generate code for form
+    createFamily(familyName, event, code);
+    
+    // Prevent default click behavior
+    event.preventDefault();
+    return false;
+});
+
+
+
+createFamily(code);
 
 $(document).ready(function () {
 
