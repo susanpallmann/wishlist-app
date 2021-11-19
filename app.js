@@ -242,6 +242,7 @@ function populateFamilyView(code) {
             let activeEvent =  familyRecord.activeEvent;
             let familyCode = code;
             let familyMembers = familyRecord.members;
+            /*
             for (let familyMember in familyMembers) {
                 console.log(familyMember);
                 let memberName = familyMember.displayName.val();
@@ -256,7 +257,7 @@ function populateFamilyView(code) {
                         </div>
                     </div>
                 `);
-            }
+            }*/
             $('#family-view').find('h1').text(familyName);
             $('#family-view').find('h2').text(activeEvent);
         }
