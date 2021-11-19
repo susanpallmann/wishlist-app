@@ -1,4 +1,5 @@
 let globalUser;
+let globalActiveFamily;
 
 /* Authentication */
 
@@ -303,6 +304,11 @@ $(document).ready(function () {
             case "my-families":
                 loadFamiliesList();
                 break;
+            case "family-view":
+                let name = $(this).attr('name');
+                // update activeFamily
+                // load info for next page
+                break;
             default:
                 break;
         }
@@ -326,5 +332,13 @@ firebase.auth().onAuthStateChanged((user) => {
     console.log(globalUser);
     if ($('#my-families').is(":visible")) {
         loadFamiliesList();
+    }
+});
+
+firebase.database().ref('users/' + globalUser + '/activeFamily').on("value", snapshot => {
+    if (snapshot.val()) {
+        globalActiveFamily = snapshot.val();
+    } else {
+        globalActiveFamily = null;
     }
 });
