@@ -122,7 +122,7 @@ function verifyCode(code) {
 
 /* Create/Initialize Family & Founding User */
 
-function createFamily(familyName, event, code); {
+function createFamily(familyName, event, code) {
     let user = firebase.auth().currentUser;
     if (user) {
         let location = firebase.database().ref('users/' + user.uid + '/families/' + code);
