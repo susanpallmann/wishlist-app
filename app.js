@@ -193,10 +193,11 @@ function loadFamiliesList() {
         location.once('value', function(snapshot) {
             $('#loaded-family-list').empty();
             let data = snapshot.val();
-            let activeFamily = data.activeFamily;
+            let activeFamily;
             let families = data.families;
 
             if (families) {
+                activeFamily = data.activeFamily;
                 for (let family in families) {
                     let familyLocation = firebase.database().ref('families/' + family);
                     familyLocation.once('value', function(snapshot) {
