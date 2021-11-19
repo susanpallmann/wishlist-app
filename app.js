@@ -126,7 +126,7 @@ function verifyCode(code) {
 
 function createFamily(familyName, event, code) {
     let user = firebase.auth().currentUser;
-    if (user) {
+    if (globalUser) {
         let displayName = user.displayName
         let codeValues = {};
         codeValues[code] = {
