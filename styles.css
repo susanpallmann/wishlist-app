@@ -96,6 +96,14 @@ h2, h3, h4, p, label {
 }
 
 /* List Items */
+#loaded-family-list {
+  display: flex;
+  flex-direction: ;
+  flex-direction: column;
+  row-gap: 16px;
+  width: 100%;
+}
+
 .flex-container.flex-vertical.no-upper-button {
   padding-top: 130px;
 }
