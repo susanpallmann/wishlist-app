@@ -147,7 +147,6 @@ function createFamily(familyName, event, code) {
                     familyLocation.set({
                         familyName: familyName,
                         members: values
-                        }
                     }, (error) => {
                         if (error) {
                             
