@@ -337,7 +337,7 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
-firebase.database().ref('users/' + globalUser + '/activeFamily').on("value", snapshot => {
+firebase.database().ref('users/' + globalUser.uid + '/activeFamily').on("value", snapshot => {
     if (snapshot.val()) {
         globalActiveFamily = snapshot.val();
     } else {
