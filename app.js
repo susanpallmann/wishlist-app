@@ -130,12 +130,13 @@ function createFamily(code) {
     location.set({
         displayName: displayName
         }, (error) => {
-            // Write failed
-            console.log(error);
-        } else {
-            // Data saved succcessfully
-            console.log('success');
-        }
+            if (error) {
+                // Write failed
+                console.log(error);
+            } else {
+                // Data saved succcessfully
+                console.log('success');
+            }
     })
 }
 
