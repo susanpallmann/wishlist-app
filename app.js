@@ -193,7 +193,7 @@ function createFamily(familyName, event, code) {
 function loadFamiliesList() {
     if (globalUser) {
         let location = firebase.database().ref('users/' + globalUser.uid);
-        location.on('value', function(snapshot) {
+        location.once('value', function(snapshot) {
             $('#loaded-family-list').empty();
             let data = snapshot.val();
             let activeFamily;
