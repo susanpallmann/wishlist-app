@@ -116,8 +116,26 @@ function verifyCode(code) {
         // If the snapshot doesn't exist, we can set up the family
         } else {
             $('#create-family-code').val(code);
+            createFamily(code);
         }
     });
+}
+
+/* Create/Initialize Family & Founding User */
+
+function createFamily(code) {
+    let user = firebase.auth().currentUser;
+    let location = firebase.database().ref('users/' + user.uid + '/families/' + code);
+    let displayName = uid.displayName
+    location.set({
+        displayName: displayName
+    }, (error) => {
+        // Write failed
+        console.log(error);
+    } else {
+        // Data saved succcessfully
+        console.log('success');
+    })
 }
 
 /* DOM-User Interactions */
@@ -197,7 +215,7 @@ $(document).ready(function () {
             
             // User is signed in
             // User object (not currently needed for anything)
-            /* let uid = user.uid; */
+            let uid = user.uid;
             
         } else {
             
