@@ -142,7 +142,6 @@ function createFamily(familyName, event, code) {
                 } else {
                     
                     // Data saved succcessfully
-                    console.log('success');
                     
                     let userFamilyLocation = firebase.database().ref('users/' + user.uid + '/families/' + code);
                     userFamilyLocation.set({
@@ -155,7 +154,6 @@ function createFamily(familyName, event, code) {
                         } else {
                             
                             // Data saved succcessfully
-                            console.log('success2');
                             
                             let values = {};
                     values[user.uid] = {
@@ -174,7 +172,6 @@ function createFamily(familyName, event, code) {
                         } else {
                             
                             // Data saved succcessfully
-                            console.log('success3');
                             loadFamiliesList();
                         }
                     })
@@ -194,7 +191,6 @@ function loadFamiliesList() {
         let families = snapshot.val();
         if (families) {
             for (let family in families) {
-                console.log(family);
                 let familyLocation = firebase.database().ref('families/' + family);
                 familyLocation.once('value', function(snapshot) {
                     let familyInfo = snapshot.val();
@@ -228,7 +224,6 @@ function loadFamiliesList() {
 
 // Shows destination state and hides other states
 function changeState(destination) {
-    
     
     $('#app').queue(function() {
         
