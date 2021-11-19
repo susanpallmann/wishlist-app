@@ -272,6 +272,14 @@ div[bg-color="white"] input[disabled=""] {
   background-color: var(--darker-grey);
 }
 
+.long-button.medium-red {
+background-color: var(--medium-red);
+}
+
+.long-button.medium-red:hover, .long-button.medium-red:active, .long-button.medium-red:focus {
+background-color: var(--medium-dark-red);
+}
+
 .round-button {
   display: flex;
   flex-direction: row;
