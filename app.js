@@ -56,6 +56,10 @@ function signUp(displayName, email, password) {
             }).then(() => {
                 
                 // Update successful
+                let location = firebase.database().ref('users/' + user.uid);
+                location.update({
+                    displayName: displayName,
+                }
                 console.log(user.displayName);
                 
             }).catch((error) => {
