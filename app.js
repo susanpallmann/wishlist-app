@@ -1,3 +1,5 @@
+let globalUser;
+
 /* Authentication */
 
 function signOut() {
@@ -183,8 +185,8 @@ function createFamily(familyName, event, code) {
 }
 
 /* Load Families on My Families View */
-function loadFamiliesList(user) {
-    let location = firebase.database().ref('users/' + user.uid);
+function loadFamiliesList() {
+    let location = firebase.database().ref('users/' + globalUser.uid);
     location.once('value', function(snapshot) {
         $('#loaded-family-list').empty();
         let data = snapshot.val();
@@ -293,10 +295,12 @@ $(document).ready(function () {
             // User is signed in
             // User object (not currently needed for anything)
             let uid = user.uid;
+            globalUser = user;
             
         } else {
             
             // User is signed out
+            globalUser = null;
         }
     });
     
@@ -312,8 +316,7 @@ $(document).ready(function () {
                 generateCode('');
                 break;
             case "my-families":
-                let user = firebase.auth().currentUser;
-                loadFamiliesList(user);
+                loadFamiliesList();
                 break;
             default:
                 break;
