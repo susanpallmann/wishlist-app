@@ -369,6 +369,7 @@ div[bg-color="white"] {
   justify-content: center;
   align-items: center;
   row-gap: 4px;
+  cursor: pointer;
 }
 
 #menu ul li p {
