@@ -372,5 +372,14 @@ div[bg-color="white"] {
 }
 
 #menu ul li p {
+  transition: all 0.15s;
+  font-size: 0;
+}
+
+#menu ul li.selected p {
+  font-size: 12px;
+}
+  
+#menu ul li:hover p {
   font-size: 12px;
 }
