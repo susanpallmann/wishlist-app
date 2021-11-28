@@ -376,7 +376,7 @@ div[bg-color="white"] {
   font-size: 0;
 }
 
-#menu ul li.selected p {
+#menu ul li.selected p, #menu ul li.active p, #menu ul li.focus p {
   font-size: 12px;
 }
   
