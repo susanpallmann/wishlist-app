@@ -370,6 +370,8 @@ div[bg-color="white"] {
   align-items: center;
   row-gap: 4px;
   cursor: pointer;
+  opacity: 0.8;
+  transition: all 0.15s;
 }
 
 #menu ul li p {
@@ -377,10 +379,18 @@ div[bg-color="white"] {
   font-size: 0;
 }
 
-#menu ul li.selected p, #menu ul li.active p, #menu ul li.focus p {
+#menu ul li.selected  {
+  opacity: 1;
+}
+
+#menu ul li.selected p  {
   font-size: 12px;
 }
   
-#menu ul li:hover p {
+#menu ul li:hover, #menu ul li.active, #menu ul li.focus {
+  opacity: 1;
+}
+
+#menu ul li:hover p, #menu ul li.active p, #menu ul li.focus p {
   font-size: 12px;
 }
