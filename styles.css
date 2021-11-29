@@ -353,6 +353,19 @@ div[bg-color="white"] {
   color: var(--white);
   padding: 8px;
   box-sizing: border-box;
+  height: 60px;
+}
+
+#menu .container {
+  height: 100%;
+}
+
+#menu .row {
+  height: 100%;
+}
+
+#menu nav {
+  height: 100%;
 }
 
 #menu ul {
@@ -360,6 +373,7 @@ div[bg-color="white"] {
   margin: 0;
   padding: 0;
   display: flex;
+  height: 100%;
 }
 
 #menu ul li {
