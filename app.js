@@ -128,18 +128,29 @@ function verifyCode(code) {
 
 /* Create/Initialize Family & Founding User */
 
+// Function to create a new family given a name, starting event, and family code
 function createFamily(familyName, event, code) {
+    
+    //Getting creator's user credential
     let user = firebase.auth().currentUser;
+    
+    // If a user is logged in
     if (globalUser) {
+        
+        // Assign some needed values for initializing the user and family in the database, making an object to make our JSON database happy
         let displayName = user.displayName
         let codeValues = {};
         codeValues[code] = {
             displayName: displayName
         };
+        
+        // First updating user's information with active family
         let location = firebase.database().ref('users/' + user.uid);
         location.update({
             displayName: displayName,
             activeFamily: code
+            
+        // Default error handling by Firebase
         }, (error) => {
                 if (error) {
                     
@@ -149,9 +160,14 @@ function createFamily(familyName, event, code) {
                     
                     // Data saved succcessfully
                     
+                    // Adding family to user's families for proper read/write permissions on the Firebase side
                     let userFamilyLocation = firebase.database().ref('users/' + user.uid + '/families/' + code);
+                    
+                    // Early architecture to possibly allow display names to be specific to a family
                     userFamilyLocation.set({
                         displayName: displayName
+                        
+                    // Default error handling by Firebase
                     },(error) => {
                         if (error) {
                             
@@ -161,27 +177,31 @@ function createFamily(familyName, event, code) {
                             
                             // Data saved succcessfully
                             
+                            // Initialize user information to add to family database path
                             let values = {};
-                    values[user.uid] = {
-                        displayName : displayName
-                    };
+                            values[user.uid] = {
+                                displayName : displayName
+                            };
                     
-                    let familyLocation = firebase.database().ref('families/' + code);
-                    familyLocation.set({
-                        activeEvent: event,
-                        familyName: familyName,
-                        members: values
-                    }, (error) => {
-                        if (error) {
-                            
-                            // Write failed
-                            console.log(error);
-                        } else {
-                            
-                            // Data saved succcessfully
-                            loadFamiliesList();
-                        }
-                    })
+                            // Now creating the family path itself since we now have permission to
+                            let familyLocation = firebase.database().ref('families/' + code);
+                            familyLocation.set({
+                                activeEvent: event,
+                                familyName: familyName,
+                                members: values
+                                
+                            // Default error handling by Firebase
+                            }, (error) => {
+                                if (error) {
+
+                                    // Write failed
+                                    console.log(error);
+                                } else {
+
+                                    // Data saved succcessfully, refresh families list
+                                    loadFamiliesList();
+                                }
+                            })
                         }
                     })
                 }
@@ -190,26 +210,46 @@ function createFamily(familyName, event, code) {
 }
 
 /* Load Families on My Families View */
+// Loads user's current families to the "my families" page
 function loadFamiliesList() {
+    
+    // If signed in
     if (globalUser) {
+        
+        // Check user's path for families
         let location = firebase.database().ref('users/' + globalUser.uid);
         location.once('value', function(snapshot) {
+            
+            // Clear page of existing family list items
             $('#loaded-family-list').empty();
             let data = snapshot.val();
             let activeFamily;
             let families = data.families;
-
+   
+            // If the user has any families
             if (families) {
+                
+                // Retrieve active family
                 activeFamily = data.activeFamily;
+                
+                // For each family
                 for (let family in families) {
+                    
+                    // Load information from database path
                     let familyLocation = firebase.database().ref('families/' + family);
                     familyLocation.once('value', function(snapshot) {
+                        
+                        // Retrieve information needed to display
                         let familyInfo = snapshot.val();
                         let familyName = familyInfo.familyName;
                         let extraClass = '';
+                        
+                        // If this family is the active family, we'll be adding the "selected" class to it
                         if (family == activeFamily) {
                             extraClass = 'selected';
                         }
+                        
+                        // Add to the DOM
                         $('#loaded-family-list').append(`
                             <div class="list-item state-change ${extraClass}" color="faint-blue" destination="family-view" code="${family}">
                                 <div class="left">
@@ -224,6 +264,7 @@ function loadFamiliesList() {
                         `);
                     });
                 }
+            // If the user has no families, display alert with information
             } else {
                 $('#loaded-family-list').append(`
                     <div class="alert info">
@@ -237,19 +278,31 @@ function loadFamiliesList() {
 }
 
 /Load Family info on Family View */
+// Function to load a specific family on the family view page
 function populateFamilyView(code) {
+    
+    // Looks up family path directly
     let location = firebase.database().ref('families/' + code);
     location.once("value", snapshot => {
+        
+        // If family exists
         if (snapshot.val()) {
+            
+            // Clears page of any existing list items
             $('#loaded-family-members').empty();
+            
+            // Grabbing family values
             let familyRecord = snapshot.val();
             let familyName = familyRecord.familyName;
             let activeEvent =  familyRecord.activeEvent;
             let familyCode = code;
             let familyMembers = familyRecord.members;
             
+            // For each family member
             for (let familyMember in familyMembers) {
                 let memberName = familyMembers[familyMember]['displayName']
+                
+                // Create DOM element with member information
                 $('#loaded-family-members').append(`
                     <div class="list-item" color="white" name="${memberName}">
                         <div class="left">
@@ -328,54 +381,70 @@ $(document).on('click', '#create-family', function() {
 $(document).ready(function () {
 
     // "Router" function for buttons that change the app's UX state
+    // Pretty complex, should be commented better when we're done editing it
     $('#app').on('click', '.state-change', function(event) {
 
         // Gets destination from button's "destination" attribute
         let destination = $(this).attr('destination');
-        let menuStatus;
+
+        
         if ($('[state="' + destination + '"]').hasClass('no-menu')) {
             $('#menu').find('.selected').each(function(index) {
                 $(this).removeClass('selected');
             });
             $('#menu').fadeOut();
+            
+        
         } else if ($('[state="' + destination + '"]').attr('menu-selected') === 'family') {
             $('#menu').fadeIn();
             $('#menu').find('.selected').each(function(index) {
                 $(this).removeClass('selected');
             });
             $('#menu').find('#family-menu').addClass('selected');
+            
+        
         } else if ($('[state="' + destination + '"]').attr('menu-selected') === 'claimed') {
             $('#menu').fadeIn();
             $('#menu').find('.selected').each(function(index) {
                 $(this).removeClass('selected');
             });
             $('#menu').find('#claimed-menu').addClass('selected');
+            
+        
         } else if ($('[state="' + destination + '"]').attr('menu-selected') === 'profile') {
             $('#menu').fadeIn();
             $('#menu').find('.selected').each(function(index) {
                 $(this).removeClass('selected');
             });
             $('#menu').find('#profile-menu').addClass('selected');
+            
+        
         } else {
             $('#menu').find('.selected').each(function(index) {
                 $(this).removeClass('selected');
             });
             $('#menu').fadeIn();
         }
+        
         changeState(destination);
+        
         switch(destination) {
+                
             case "create-family":
                 generateCode('');
                 break;
+                
             case "my-families":
                 loadFamiliesList();
                 break;
+                
             case "family-view":
                 let code = $(this).attr('code');
                 let location = firebase.database().ref('users/' + globalUser.uid);
                 location.update({activeFamily: code});
                 populateFamilyView(code);
                 break;
+                
             default:
                 break;
         }
@@ -388,9 +457,13 @@ firebase.auth().onAuthStateChanged((user) => {
 
         // User is signed in
         globalUser = user;
+        
+        
         firebase.database().ref('users/' + globalUser.uid + '/activeFamily').on("value", snapshot => {
+            
             if (snapshot.val()) {
                 globalActiveFamily = snapshot.val();
+                
             } else {
                 globalActiveFamily = null;
             }
@@ -401,5 +474,6 @@ firebase.auth().onAuthStateChanged((user) => {
         // User is signed out
         globalUser = null;
     }
+    
     loadFamiliesList();
 });
