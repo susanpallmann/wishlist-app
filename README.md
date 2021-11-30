@@ -30,7 +30,7 @@ Notes:
 
 Features:
 - [X] [1.1.X](https://github.com/susanpallmann/wishlist-app/issues/13)  - *Complete*
-- [X] [1.2](https://github.com/susanpallmann/wishlist-app/issues/2)  - *Tentatively Complete*
+- [X] [1.2](https://github.com/susanpallmann/wishlist-app/issues/2)  - *Complete*
 - [ ] [1.3](https://github.com/susanpallmann/wishlist-app/issues/3)  - *Started (Not Finishing this Sprint)*
 
 End of Sprint:
@@ -58,9 +58,9 @@ Plan for Next Sprint:
 ### 1.0 - MVP
 **Features:**
 * [1.1](https://github.com/susanpallmann/wishlist-app/issues/1) Basic Authentication - *Complete*
-* [1.2](https://github.com/susanpallmann/wishlist-app/issues/2) Create Families
-* [1.3](https://github.com/susanpallmann/wishlist-app/issues/3) Join Families
-* [1.4](https://github.com/susanpallmann/wishlist-app/issues/4) Manage Joined Families
+* [1.2](https://github.com/susanpallmann/wishlist-app/issues/2) Create Families - *Complete*
+* [1.3](https://github.com/susanpallmann/wishlist-app/issues/3) Join Families - *Started*
+* [1.4](https://github.com/susanpallmann/wishlist-app/issues/4) Manage Joined Families - *Started*
 * [1.5](https://github.com/susanpallmann/wishlist-app/issues/5) Family Settings
 * [1.6](https://github.com/susanpallmann/wishlist-app/issues/6) Create Lists
   * 1.6.1 Create List Items
@@ -97,7 +97,15 @@ Features:
 - [X] 0.4 - *Complete*
 - [X] [1.1](https://github.com/susanpallmann/wishlist-app/issues/1) - *Complete*
 
-End of Sprint:
-- [X] Comment
-- [X] Address Code Debt
-- [X] Plan Next Sprint
+#### 11/14 - 12/04
+
+Notes:
+
+*This sprint overlaps with Thanksgiving, bandwidth for dev projects will be reduced.*
+
+*This sprint has been extended a week to make up for being sick and having far, far less time to work than expected.*
+
+Features:
+- [X] [1.1.X](https://github.com/susanpallmann/wishlist-app/issues/13)  - *Complete*
+- [X] [1.2](https://github.com/susanpallmann/wishlist-app/issues/2)  - *Complete*
+- [ ] [1.3](https://github.com/susanpallmann/wishlist-app/issues/3)  - *Started (Not Finishing this Sprint)*
