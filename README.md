@@ -39,10 +39,12 @@ End of Sprint:
 - [X] Plan Next Sprint
 
 Plan for Next Sprint:
-```*12/5 - 12/18*
+```
+*12/5 - 12/18*
 
 - [ ] [1.3](https://github.com/susanpallmann/wishlist-app/issues/3)  - *Started*
-- [ ] [1.4](https://github.com/susanpallmann/wishlist-app/issues/4)  - *Started*```
+- [ ] [1.4](https://github.com/susanpallmann/wishlist-app/issues/4)  - *Started*
+```
 
 ## Roadmap
 
