@@ -7,7 +7,7 @@ My family lives in multiple states across the U.S. Every year for Christmas my f
 
 I don't really plan to launch this at this point; the real goal of this project is just to regularly work on and finish a project, similar to [color-me-2](https://github.com/susanpallmann/color-me-2).
 
-**Current Version:** 1.0
+**Current Version:** 1.2
 
 ## Contents
 * [Current Sprint](#current-sprint)
