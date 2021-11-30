@@ -334,15 +334,27 @@ $(document).ready(function () {
         let destination = $(this).attr('destination');
         let menuStatus;
         if ($('[state="' + destination + '"]').hasClass('no-menu')) {
+            $('#menu').find('.selected').each(function(index) {
+                $(this).removeClass('selected');
+            });
             $('#menu').fadeOut();
         } else if ($('[state="' + destination + '"]').attr('menu-selected') === 'family') {
             $('#menu').fadeIn();
+            $('#menu').find('.selected').each(function(index) {
+                $(this).removeClass('selected');
+            });
             $('#menu').find('#family-menu').addClass('selected');
         } else if ($('[state="' + destination + '"]').attr('menu-selected') === 'claimed') {
             $('#menu').fadeIn();
+            $('#menu').find('.selected').each(function(index) {
+                $(this).removeClass('selected');
+            });
             $('#menu').find('#claimed-menu').addClass('selected');
         } else if ($('[state="' + destination + '"]').attr('menu-selected') === 'profile') {
             $('#menu').fadeIn();
+            $('#menu').find('.selected').each(function(index) {
+                $(this).removeClass('selected');
+            });
             $('#menu').find('#profile-menu').addClass('selected');
         } else {
             $('#menu').find('.selected').each(function(index) {
