@@ -23,7 +23,9 @@ I don't really plan to launch this at this point; the real point of this project
 
 Notes:
 
-*This sprint overlaps with Thanksgiving, bandwidth for dev projects will be reduced. This sprint has been extended a week to make up for being sick and havihng far less time to work than expected.*
+*This sprint overlaps with Thanksgiving, bandwidth for dev projects will be reduced.*
+
+*This sprint has been extended a week to make up for being sick and having far, far less time to work than expected.*
 
 Features:
 - [X] [1.1.X](https://github.com/susanpallmann/wishlist-app/issues/13)  - *Complete*
