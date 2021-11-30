@@ -333,15 +333,15 @@ $(document).ready(function () {
         // Gets destination from button's "destination" attribute
         let destination = $(this).attr('destination');
         let menuStatus;
-        if ($('[state=" + 'destination' + "]').hasClass('no-menu')) {
+        if ($('[state="' + destination + '"]').hasClass('no-menu')) {
             $('#menu').fadeOut();
         } else if ($('[state=" + 'destination' + "]').attr('menu-selected') === 'family') {
             $('#menu').fadeIn();
             $('#menu').find('#family-menu').addClass('selected');
-        } else if ($('[state=" + 'destination' + "]').attr('menu-selected') === 'claimed') {
+        } else if ($('[state="' + destination + '"]').attr('menu-selected') === 'claimed') {
             $('#menu').fadeIn();
             $('#menu').find('#claimed-menu').addClass('selected');
-        } else if ($('[state=" + 'destination' + "]').attr('menu-selected') === 'profile') {
+        } else if ($('[state="' + destination + '"]').attr('menu-selected') === 'profile') {
             $('#menu').fadeIn();
             $('#menu').find('#profile-menu').addClass('selected');
         } else {
