@@ -19,16 +19,16 @@ I don't really plan to launch this at this point; the real point of this project
 * [Dev Diary](#dev-diary)
 
 ## Current Sprint
-*11/14 - 11/27*
+*11/14 - 12/4*
 
 Notes:
 
-*This sprint overlaps with Thanksgiving, bandwidth for dev projects will be reduced.*
+*This sprint overlaps with Thanksgiving, bandwidth for dev projects will be reduced. This sprint has been extended a week to make up for being sick and havihng far less time to work than expected.*
 
 Features:
 - [X] [1.1.X](https://github.com/susanpallmann/wishlist-app/issues/13)  - *Complete*
-- [ ] [1.2](https://github.com/susanpallmann/wishlist-app/issues/2)  - *Started*
-- [ ] [1.3](https://github.com/susanpallmann/wishlist-app/issues/3)  - *Started*
+- [X] [1.2](https://github.com/susanpallmann/wishlist-app/issues/2)  - *Tentatively Complete*
+- [ ] [1.3](https://github.com/susanpallmann/wishlist-app/issues/3)  - *Started (Not Finishing this Sprint)*
 
 End of Sprint:
 - [ ] Comment
