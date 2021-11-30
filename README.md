@@ -19,6 +19,7 @@ I don't really plan to launch this at this point; the real point of this project
 * [Dev Diary](#dev-diary)
 
 ## Current Sprint
+
 *11/14 - 12/4*
 
 Notes:
@@ -33,9 +34,15 @@ Features:
 - [ ] [1.3](https://github.com/susanpallmann/wishlist-app/issues/3)  - *Started (Not Finishing this Sprint)*
 
 End of Sprint:
-- [ ] Comment
-- [ ] Address Code Debt
-- [ ] Plan Next Sprint
+- [X] Comment
+- [X] Address Code Debt
+- [X] Plan Next Sprint
+
+Plan for Next Sprint:
+```*12/5 - 12/18*
+
+- [ ] [1.3](https://github.com/susanpallmann/wishlist-app/issues/3)  - *Started*
+- [ ] [1.4](https://github.com/susanpallmann/wishlist-app/issues/4)  - *Started*```
 
 ## Roadmap
 
