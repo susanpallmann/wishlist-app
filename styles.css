@@ -13,6 +13,8 @@
   --medium-green: #4F6B6B;
   --dark-green: #343D39;
   --black: #000000;
+  --alert-green: #6B9A83;
+  --alert-light-green: #E3F4EC;
 }
 
 /* Base HTML Styling */
@@ -21,9 +23,14 @@ body {
   padding: 0;
 }
 
+#app .container {
+  max-width: 600px;
+}
+
 /* Flexbox Styles */
 .flex-container {
   display: flex;
+  padding-top: 20px;
 }
 
 .form-container.flex-vertical {
@@ -33,12 +40,12 @@ body {
 .buttons-container {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .flex-vertical {
   flex-direction: column;
   row-gap: 56px;
-  padding-top: 20px;
   box-sizing: border-box;
   align-items: center;
 }
@@ -61,6 +68,12 @@ body {
   row-gap: 16px;
 }
 
+.titles-container.flex-vertical {
+  flex-direction: column;
+  row-gap: 0px;
+  width: 100%;
+}
+
 .state {
   height: 100vh;
 }
@@ -78,10 +91,115 @@ h1 {
   font-weight: 700;
 }
 
+h2 {
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 h2, h3, h4, p, label {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
+}
+
+.text-left-align {
+  width: 100%;
+}
+
+/* List Items */
+#loaded-family-list {
+  display: flex;
+  flex-direction: ;
+  flex-direction: column;
+  row-gap: 16px;
+  width: 100%;
+}
+
+#loaded-family-members {
+  display: flex;
+  flex-direction: ;
+  flex-direction: column;
+  row-gap: 16px;
+  width: 100%;
+}
+
+.flex-container.flex-vertical.no-upper-button {
+  padding-top: 130px;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.list-item[color="faint-blue"] {
+  background-color: var(--faint-blue);
+}
+
+.list-item[color="faint-blue"]:hover, .list-item[color="faint-blue"]:active, .list-item[color="faint-blue"]:focus {
+    background-color: var(--light-blue);
+}
+
+.list-item[color="white"] {
+  background-color: var(--white);
+  color: var(--dark-green);
+}
+
+.list-item[color="white"]:hover, .list-item[color="white"]:active, .list-item[color="white"]:focus {
+    background-color: var(--faint-blue);
+}
+
+.list-item .left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 8px;
+  padding: 0px;
+}
+
+.list-item .right {
+}
+
+.family-code {
+  opacity: 0.5;
+}
+
+.list-item[color="faint-blue"].selected {
+  background-color: var(--light-red);
+  color: #fff;
+}
+
+.list-item[color="faint-blue"].selected:hover, .list-item[color="faint-blue"].selected:active, .list-item[color="faint-blue"].selected:focus {
+background-color: var(--medium-red);
+color: #fff;
+}
+
+/* Alerts */
+.alert {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px;
+  box-sizing: border-box;
+ border-radius: 12px;
+  column-gap: 8px;
+}
+
+.alert.info {
+  background-color: var(--alert-light-green);
+  border: 1px solid var(--alert-green);
+  color: var(--dark-green);
 }
 
 /* Forms */
@@ -108,6 +226,11 @@ div[bg-color="white"] input[type="text"], div[bg-color="white"] input[type="pass
 div[bg-color="red"] input[type="text"], div[bg-color="red"] input[type="password"] {
   background-color: var(--white);
   color: var(--dark-green);
+}
+
+div[bg-color="white"] input[disabled=""] {
+  background-color: var(--alert-light-green);
+  color: var(--alert-green);
 }
 
 /* Buttons */
@@ -146,7 +269,38 @@ div[bg-color="red"] input[type="text"], div[bg-color="red"] input[type="password
 }
 
 .small-button.white:hover, .small-button.white:active, .small-button.white:focus {
+  background-color: var(--faint-blue);
+}
+
+.long-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  column-gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.15s;
+}
+
+.long-button.light-grey {
   background-color: var(--light-grey);
+}
+
+.long-button.light-grey:hover, .small-button.light-grey:active, .small-button.light-grey:focus {
+  background-color: var(--darker-grey);
+}
+
+.long-button.medium-red {
+background-color: var(--medium-red);
+}
+
+.long-button.medium-red:hover, .long-button.medium-red:active, .long-button.medium-red:focus {
+background-color: var(--medium-dark-red);
 }
 
 .round-button {
@@ -187,4 +341,70 @@ div[bg-color="red"] {
 div[bg-color="white"] {
   background-color: var(--white);
   color: var(--dark-green);
+}
+
+/* Nav Menu */
+
+#menu {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--dark-red);
+  color: var(--white);
+  padding: 8px;
+  box-sizing: border-box;
+  height: 60px;
+}
+
+#menu .container {
+  height: 100%;
+}
+
+#menu .row {
+  height: 100%;
+}
+
+#menu nav {
+  height: 100%;
+}
+
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100%;
+}
+
+#menu ul li {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 4px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all 0.15s;
+}
+
+#menu ul li p {
+  transition: all 0.15s;
+  font-size: 0;
+}
+
+#menu ul li.selected  {
+  opacity: 1;
+}
+
+#menu ul li.selected p  {
+  font-size: 12px;
+}
+  
+#menu ul li:hover, #menu ul li.active, #menu ul li.focus {
+  opacity: 1;
+}
+
+#menu ul li:hover p, #menu ul li.active p, #menu ul li.focus p {
+  font-size: 12px;
 }

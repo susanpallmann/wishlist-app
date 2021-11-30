@@ -59,7 +59,7 @@
         </div>
       </div>
     </div>
-    <div class="state" state="splash" bg-color="red">
+    <div class="state no-menu" state="splash" bg-color="red">
       <div class="container">
         <div class="row">
           <div class="column span12">
@@ -75,7 +75,7 @@
         </div>
       </div>
     </div>
-    <div class="state" state="log-in" bg-color="white">
+    <div class="state no-menu" state="log-in" bg-color="white">
       <div class="container">
         <div class="row">
           <div class="column span12">
@@ -91,7 +91,7 @@
                 </form>
               </div>
               <div class="buttons-container flex-vertical">
-                <span class="small-button light-red" id="login"><p>Log In</p></span>
+                <span class="small-button light-red state-change" id="login" destination="my-families"><p>Log In</p></span>
                 <span class="small-button white state-change" destination="sign-up"><p>Don’t have an account? Sign Up</p></span>
               </div>
             </div>
@@ -99,7 +99,7 @@
         </div>
       </div>
     </div>
-    <div class="state" state="sign-up" bg-color="red">
+    <div class="state no-menu" state="sign-up" bg-color="red">
       <div class="container">
         <div class="row">
           <div class="column span12">
@@ -117,7 +117,7 @@
                 </form>
               </div>
               <div class="buttons-container flex-vertical">
-                <span class="small-button white" id="signup"><p>Sign Up</p></span>
+                <span class="small-button white state-change" id="signup" destination="my-families"><p>Sign Up</p></span>
                 <span class="small-button light-red state-change" destination="log-in"><p>Already have an account? Log In</p></span>
               </div>
             </div>
@@ -125,5 +125,110 @@
         </div>
       </div>
     </div>
+    <div class="state no-menu" state="my-families" bg-color="white" style="display: none">
+      <div class="container">
+        <div class="row">
+          <div class="column span12">
+            <div class="flex-container flex-vertical no-upper-button">
+              <h1>My Families</h1>
+              <div class="buttons-container flex-vertical">
+                <p class="text-left-align">My Families</p>
+                <div id="loaded-family-list">
+                </div>
+                <span class="long-button light-grey state-change" destination="join-family">
+                  <i class="material-icons-round">add_box</i>
+                  <p>Join or Create Family</p>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="state no-menu" state="join-family" bg-color="white">
+      <div class="container">
+        <div class="row">
+          <div class="column span12">
+            <div class="flex-container flex-vertical">
+              <span class="round-button state-change" destination="my-families"><i class="material-icons-round">navigate_before</i><p>Cancel</p></span>
+              <h1>Join Family</h1>
+              <div class="form-container flex-vertical">
+                <form id="join-family-form">
+                  <label for="join-family-code">Family Code</label>
+                  <input type="text" name="join-family-code" id="join-family-code" placeholder="enter the family's 4-letter code">
+                </form>
+              </div>
+              <div class="buttons-container flex-vertical">
+                <span class="small-button light-red state-change" id="join-family" destination="my-families"><p>Join</p></span>
+                <span class="small-button white state-change" id="initialize-create-family" destination="create-family"><p>Create new family</p></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="state no-menu" state="create-family" bg-color="white">
+      <div class="container">
+        <div class="row">
+          <div class="column span12">
+            <div class="flex-container flex-vertical">
+              <span class="round-button state-change" destination="my-families"><i class="material-icons-round">navigate_before</i><p>Cancel</p></span>
+              <h1>Create Family</h1>
+              <div class="form-container flex-vertical">
+                <form id="create-family-form">
+                  <label for="create-family-name">Family Name</label>
+                  <input type="text" name="create-family-name" id="create-family-name" placeholder="Name your family">
+                  <label for="create-family-event">Event</label>
+                  <input type="text" name="create-family-event" id="create-family-event" placeholder="e.g. Christmas 2021">
+                  <label for="create-family-code">Generated Family Code</label>
+                  <input type="text" name="create-family-code" id="create-family-code" disabled>
+                </form>
+              </div>
+              <div class="buttons-container flex-vertical">
+                <span class="small-button light-red state-change" id="create-family" destination="my-families"><p>Create</p></span>
+                <span class="small-button white state-change" destination="join-family"><p>Join existing family</p></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="state" menu-selected="family" state="family-view" bg-color="red">
+      <div class="container">
+        <div class="row">
+          <div class="column span12">
+            <div class="flex-container flex-vertical">
+              <span class="round-button state-change" destination="my-families"><i class="material-icons-round">navigate_before</i><p>Switch Families</p></span>
+              <h1 class="text-left-align">Family Name</h1>
+              <h2 class="text-left-align">Event Name</h2>
+              <div class="buttons-container flex-vertical">
+                <div id="loaded-family-members">
+                </div>
+                <span class="long-button medium-red">
+                  <i class="material-icons-round">add_box</i>
+                  <p>Invite a family member</p>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="menu">
+      <div class="container">
+        <div class="row">
+          <div class="column span12">
+            <nav>
+              <ul>
+                <li id="family-menu"><i class="material-icons-round">people</i><p>Family</p></li>
+                <li id="claimed-menu"><i class="material-icons-round">library_add_check</i><p>Claimed</p></li>
+                <li id="profile-menu"><i class="material-icons-round">account_circle</i><p>Profile</p></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
+<!-- test -->
