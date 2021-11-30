@@ -335,7 +335,7 @@ $(document).ready(function () {
         let menuStatus;
         if ($('[state="' + destination + '"]').hasClass('no-menu')) {
             $('#menu').fadeOut();
-        } else if ($('[state=" + 'destination' + "]').attr('menu-selected') === 'family') {
+        } else if ($('[state="' + destination + '"]').attr('menu-selected') === 'family') {
             $('#menu').fadeIn();
             $('#menu').find('#family-menu').addClass('selected');
         } else if ($('[state="' + destination + '"]').attr('menu-selected') === 'claimed') {
